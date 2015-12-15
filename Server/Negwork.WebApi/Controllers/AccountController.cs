@@ -21,7 +21,7 @@ using Negwork.Data.Models;
 namespace Negwork.WebApi.Controllers
 {
     [Authorize]
-    [RoutePrefix("api/Account")]
+    [RoutePrefix("api/Users")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
@@ -337,6 +337,7 @@ namespace Negwork.WebApi.Controllers
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Gender = model.Gender,
+                AdditionalInfo = model.AdditionalInfo
             };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);

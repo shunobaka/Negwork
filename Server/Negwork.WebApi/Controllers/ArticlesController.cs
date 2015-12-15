@@ -3,6 +3,7 @@
     using AutoMapper.QueryableExtensions;
     using Data.Models;
     using Data.Repositories;
+    using Microsoft.AspNet.Identity;
     using Models.ArticleModels;
     using Services.Data;
     using System;
@@ -11,15 +12,15 @@
 
     public class ArticlesController : ApiController
     {
-        private ArticleService data;
+        private ArticlesService data;
 
-        public ArticlesController(ArticleService data)
+        public ArticlesController(ArticlesService data)
         {
             this.data = data;
         }
 
         public ArticlesController()
-            : this(new ArticleService(new GenericRepository<Article>(new Data.NegworkDbContext())))
+            : this(new ArticlesService(new GenericRepository<Article>(new Data.NegworkDbContext())))
         {
         }
 
@@ -69,7 +70,7 @@
             }
 
             var created = this.data.CreateArticle(
-                "cd4b7a44-da35-4f2b-ac13-2ae9eec01780",
+                this.User.Identity.GetUserId(),
                 model.Title,
                 model.Description,
                 model.DatePublished);

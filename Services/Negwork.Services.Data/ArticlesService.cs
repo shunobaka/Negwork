@@ -5,11 +5,11 @@
     using System;
     using System.Linq;
 
-    public class ArticleService
+    public class ArticlesService
     {
         private IRepository<Article> articles;
 
-        public ArticleService(IRepository<Article> articles)
+        public ArticlesService(IRepository<Article> articles)
         {
             this.articles = articles;
         }

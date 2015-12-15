@@ -40,6 +40,9 @@
 
         [Required]
         public Gender Gender { get; set; }
+    
+        [MaxLength(ModelConstants.MAX_USER_ADDITIONAL_INFO_LENGTH)]
+        public string AdditionalInfo { get; set; }
 
         public virtual ICollection<Article> Articles
         {
