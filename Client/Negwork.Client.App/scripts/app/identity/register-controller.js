@@ -1,15 +1,16 @@
 ﻿(function () {
     'use strict';
 
-    function RegisterController(auth) {
+    function RegisterController($location, auth) {
         var vm = this;
 
         vm.registerUser = function(user, form) {
             if (form.$valid) {
-                debugger;
+                user.gender = user.gender || "1";
+
                 auth.register(user)
                     .then(function () {
-                        $location.path('/login');
+                        $location.path('/identity/login');
                         // TODO: Notify
                     }, function () {
                         // TODO: Notify error
@@ -21,5 +22,5 @@
     }
 
     angular.module('negwork.controllers')
-		.controller('RegisterController', ['auth', RegisterController]);
+		.controller('RegisterController', ['$location', 'auth', RegisterController]);
 }());
