@@ -5,16 +5,16 @@
     using Data.Repositories;
     using Microsoft.AspNet.Identity;
     using Models.ArticleModels;
+    using Services.Data.Contracts;
     using Services.Data;
-    using System;
     using System.Linq;
     using System.Web.Http;
 
     public class ArticlesController : ApiController
     {
-        private ArticlesService data;
+        private IArticlesService data;
 
-        public ArticlesController(ArticlesService data)
+        public ArticlesController(IArticlesService data)
         {
             this.data = data;
         }
@@ -61,7 +61,6 @@
         }
 
         [Authorize]
-        [HttpPost]
         public IHttpActionResult Post(ArticleCreationModel model)
         {
             if (!this.ModelState.IsValid)

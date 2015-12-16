@@ -7,11 +7,13 @@
     using Ninject.Web.Common;
     using Data.Repositories;
     using Common.Constants;
+    using Data;
 
     public static class NinjectConfig
     {
         public static Action<IKernel> DependenciesRegistration = kernel =>
         {
+            kernel.Bind<NegworkDbContext>().To<NegworkDbContext>();
             kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
         };
 
@@ -36,7 +38,7 @@
         private static void RegisterServices(IKernel kernel)
         {
             DependenciesRegistration(kernel);
-
+            
             kernel.Bind(b => b
                 .From(Assemblies.DataServices)
                 .SelectAllClasses()

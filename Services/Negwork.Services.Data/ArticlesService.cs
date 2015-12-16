@@ -2,10 +2,11 @@
 {
     using Negwork.Data.Models;
     using Negwork.Data.Repositories;
+    using Contracts;
     using System;
     using System.Linq;
 
-    public class ArticlesService
+    public class ArticlesService : IArticlesService
     {
         private IRepository<Article> articles;
 
