@@ -17,6 +17,9 @@ using Negwork.WebApi.Models;
 using Negwork.WebApi.Providers;
 using Negwork.WebApi.Results;
 using Negwork.Data.Models;
+using Negwork.Data;
+using System.Linq;
+using System.Data.Entity;
 
 namespace Negwork.WebApi.Controllers
 {
@@ -348,6 +351,30 @@ namespace Negwork.WebApi.Controllers
             }
 
             return Ok();
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IHttpActionResult> Identity()
+        {
+            var userId = this.User.Identity.GetUserId();
+
+            var db = new NegworkDbContext();
+
+            var user = await db.Users.Where(u => u.Id == userId)
+                .Select(u => new
+                {
+                    u.UserName,
+                    u.Email
+                })
+                .FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                return InternalServerError();
+            }
+
+            return this.Json(user);
         }
 
         // POST api/Account/RegisterExternal
