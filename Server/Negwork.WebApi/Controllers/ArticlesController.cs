@@ -19,11 +19,6 @@
             this.data = data;
         }
 
-        public ArticlesController()
-            : this(new ArticlesService(new GenericRepository<Article>(new Data.NegworkDbContext())))
-        {
-        }
-
         public IHttpActionResult Get()
         {
             var articles = this.data
