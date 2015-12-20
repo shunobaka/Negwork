@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function RegisterController($location, auth) {
+    function RegisterController($location, notifier, auth) {
         var vm = this;
 
         vm.registerUser = function(user, form) {
@@ -11,16 +11,16 @@
                 auth.register(user)
                     .then(function () {
                         $location.path('/identity/login');
-                        // TODO: Notify
-                    }, function () {
-                        // TODO: Notify error
+                        notifier.success('Registration successful!');
+                    }, function (err) {
+                        notifier.error(err);
                     });
             } else {
-                // TODO: notify problem
+                notifier.error('You shouldn\'t be doing this!');
             }
         }
     }
 
     angular.module('negwork.controllers')
-		.controller('RegisterController', ['$location', 'auth', RegisterController]);
+		.controller('RegisterController', ['$location', '$notifier', 'auth', RegisterController]);
 }());

@@ -11,7 +11,6 @@
 
             $http.post(apiUrl + '/api/users/login', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
                 .then(function (response) {
-                    debugger;
                     var tokenValue = response.data.access_token;
 
                     var theBigDay = new Date();

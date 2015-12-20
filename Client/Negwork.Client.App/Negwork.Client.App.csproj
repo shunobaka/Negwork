@@ -76,11 +76,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <Content Include="partials\common\header.html" />
     <Content Include="partials\home\home.html" />
     <Content Include="partials\identity\login.html" />
     <Content Include="partials\identity\register.html" />
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\common\main-controller.js" />
+    <Content Include="scripts\app\common\header-directive.js" />
+    <Content Include="scripts\app\common\notifier-service.js" />
     <Content Include="scripts\app\home\home-controller.js" />
     <Content Include="scripts\app\identity\auth-service.js" />
     <Content Include="scripts\app\identity\identity-service.js" />

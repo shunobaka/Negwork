@@ -355,6 +355,7 @@ namespace Negwork.WebApi.Controllers
 
         [HttpGet]
         [Authorize]
+        [Route("Identity")]
         public async Task<IHttpActionResult> Identity()
         {
             var userId = this.User.Identity.GetUserId();

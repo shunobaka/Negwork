@@ -2,7 +2,15 @@
     'use strict';
 
     angular.module('negwork.services', []);
+    angular.module('negwork.directives', []);
     angular.module('negwork.controllers', []);
+
+    var run = function run($http, $cookies, auth) {
+        if (auth.isAuthenticated()) {
+            $http.defaults.headers.common.Authorization = 'Bearer ' + $cookies.get('authentication');
+            auth.getIdentity();
+        }
+    };
 
     var config = function config($routeProvider, $locationProvider) {
         $locationProvider.html5Mode(true);
@@ -29,8 +37,10 @@
     }
 
     var negNews = angular
-        .module('negwork', ['ngRoute', 'ngCookies', 'negwork.controllers', 'negwork.services'])
+        .module('negwork', ['ngRoute', 'ngCookies', 'negwork.controllers', 'negwork.services', 'negwork.directives'])
         .config(['$routeProvider', '$locationProvider', config])
-        .constant('apiUrl', 'http://localhost:40471');
+        .run(['$http', '$cookies', 'auth', run])
+        .constant('apiUrl', 'http://localhost:40471')
+        .value('toastr', toastr);
     // TODO: Fix url
 }());

@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function mainController(auth, identity) {
+    function mainController($location, notifier, auth, identity) {
         var vm = this;
         waitForLogin();
 
@@ -10,6 +10,7 @@
             vm.currentUser = undefined;
             waitForLogin();
             $location.path('/');
+            notifier.success('Successfully logged out!');
         };
 
         function waitForLogin() {
@@ -21,5 +22,5 @@
 
     angular
         .module('negwork.controllers')
-        .controller('MainController', ['auth', 'identity', mainController])
+        .controller('MainController', ['$location', 'notifier', 'auth', 'identity', mainController])
 }());
