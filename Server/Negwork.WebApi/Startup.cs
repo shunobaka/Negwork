@@ -7,6 +7,7 @@ using System.Web.Http;
 using Ninject.Web.Common.OwinHost;
 using Ninject.Web.WebApi.OwinHost;
 using Negwork.Common.Constants;
+using Microsoft.Owin.Cors;
 
 [assembly: OwinStartup(typeof(Negwork.WebApi.Startup))]
 
@@ -16,6 +17,8 @@ namespace Negwork.WebApi
     {
         public void Configuration(IAppBuilder app)
         {
+            app.UseCors(CorsOptions.AllowAll);
+
             AutoMapperConfig.RegisterMappings(Assemblies.WebApi);
 
             ConfigureAuth(app);
