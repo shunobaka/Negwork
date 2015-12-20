@@ -2,8 +2,23 @@
     padding-top: 60px;
     padding-left: 50px;
     padding-right: 50px;
+    background: url("../images/../images/background.png");
 }
 
 #toast-container {
     margin-top: 60px;
+}
+
+.jumbotron {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
+.ng-enter {
+    transition: 0.7s ease-in;
+    opacity: 0;
+}
+
+.ng-enter-active {
+    opacity: 1;
 }
