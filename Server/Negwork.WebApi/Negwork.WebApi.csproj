@@ -230,11 +230,11 @@
     </Compile>
     <Compile Include="Infrastructure\Mappings\IHaveCustomMappings.cs" />
     <Compile Include="Infrastructure\Mappings\IMapFrom.cs" />
-    <Compile Include="Models\AccountBindingModels.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\UserModels\AccountBindingModels.cs" />
+    <Compile Include="Models\UserModels\AccountViewModels.cs" />
     <Compile Include="Models\ArticleModels\ArticleCreationModel.cs" />
     <Compile Include="Models\ArticleModels\ArticleResponseModel.cs" />
-    <Compile Include="Models\UserIdentityResponseModel.cs" />
+    <Compile Include="Models\UserModels\UserIdentityResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />

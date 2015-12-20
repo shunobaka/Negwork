@@ -52,7 +52,7 @@ namespace Negwork.WebApi.Models
         [Display(Name = "LastName")]
         public string LastName { get; set; }
 
-        public DateTime? DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         [Required]
         public Gender Gender { get; set; }
