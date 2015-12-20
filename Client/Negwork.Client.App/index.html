@@ -7,14 +7,16 @@
     <link href="styles/main.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.2/toastr.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-cookies.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.2/toastr.min.js"></script>
 </head>
 <body ng-app="negwork" ng-cloak ng-controller="MainController as vm">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <!--<nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -44,7 +46,9 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav>-->
+
+    <div header></div>
 
 	<div ng-view>
 
@@ -53,8 +57,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
 
 	<script src="scripts/app/app.js"></script>
+
+    <!-- Services -->
     <script src="scripts/app/identity/identity-service.js"></script>
     <script src="scripts/app/identity/auth-service.js"></script>
+    <script src="scripts/app/common/notifier-service.js"></script>
+
+    <!-- Directives -->
+    <script src="scripts/app/common/header-directive.js"></script>
+
+    <!-- Controllers -->
     <script src="scripts/app/common/main-controller.js"></script>
 	<script src="scripts/app/home/home-controller.js"></script>
     <script src="scripts/app/identity/login-controller.js"></script>
