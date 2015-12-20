@@ -11,7 +11,7 @@
                         $location.path('/');
                         notifier.success('Successfully logged in!');
                     }, function (err) {
-                        notifier.error(err);
+                        notifier.error(err.data['error_description']);
                     });
             }
         };

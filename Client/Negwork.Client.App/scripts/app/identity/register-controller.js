@@ -13,7 +13,11 @@
                         $location.path('/identity/login');
                         notifier.success('Registration successful!');
                     }, function (err) {
-                        notifier.error(err);
+                        var errors = err.data.ModelState[''] || err.data.ModelState['model.Password'];
+                        debugger;
+                        for (var errorIndex in errors) {
+                            notifier.error(errors[errorIndex]);
+                        }
                     });
             } else {
                 notifier.error('You shouldn\'t be doing this!');
@@ -22,5 +26,5 @@
     }
 
     angular.module('negwork.controllers')
-		.controller('RegisterController', ['$location', '$notifier', 'auth', RegisterController]);
+		.controller('RegisterController', ['$location', 'notifier', 'auth', RegisterController]);
 }());
