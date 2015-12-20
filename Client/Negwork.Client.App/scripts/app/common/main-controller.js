@@ -22,5 +22,5 @@
 
     angular
         .module('negwork.controllers')
-        .controller('MainController', ['$location', 'notifier', 'auth', 'identity', mainController])
+        .controller('MainController', ['$location', 'notifier', 'auth', 'identity', mainController]);
 }());

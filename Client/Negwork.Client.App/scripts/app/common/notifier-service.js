@@ -20,5 +20,5 @@
 
     angular
         .module('negwork.services')
-        .factory('notifier', ['toastr', notifierService])
+        .factory('notifier', ['toastr', notifierService]);
 }());
