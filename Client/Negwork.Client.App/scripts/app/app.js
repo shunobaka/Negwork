@@ -37,7 +37,7 @@
     }
 
     var negNews = angular
-        .module('negwork', ['ngRoute', 'ngCookies', 'negwork.controllers', 'negwork.services', 'negwork.directives'])
+        .module('negwork', ['ngRoute', 'ngCookies', 'ngAnimate', 'negwork.controllers', 'negwork.services', 'negwork.directives'])
         .config(['$routeProvider', '$locationProvider', config])
         .run(['$http', '$cookies', 'auth', run])
         .constant('apiUrl', 'http://localhost:40471')

@@ -66,6 +66,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\background.png" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -81,6 +82,7 @@
     <Content Include="partials\identity\login.html" />
     <Content Include="partials\identity\register.html" />
     <Content Include="scripts\app\app.js" />
+    <Content Include="scripts\app\common\datepicker-directive.js" />
     <Content Include="scripts\app\common\main-controller.js" />
     <Content Include="scripts\app\common\header-directive.js" />
     <Content Include="scripts\app\common\notifier-service.js" />
