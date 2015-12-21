@@ -9,6 +9,8 @@
     using Services.Data;
     using System.Linq;
     using System.Web.Http;
+    using System;
+    using Extensions;
 
     [RoutePrefix("api/Articles")]
     public class ArticlesController : ApiController
@@ -20,10 +22,11 @@
             this.data = data;
         }
         
-        public IHttpActionResult Get()
+        public IHttpActionResult Get([FromUri]ArticleFilterModel model)
         {
             var articles = this.data
                 .GetAll()
+                .FilterArticles(model)
                 .ProjectTo<ArticleResponseModel>()
                 .ToList();
 
@@ -62,7 +65,8 @@
                 this.User.Identity.GetUserId(),
                 model.Title,
                 model.Description,
-                model.DatePublished);
+                DateTime.Now,
+                model.Category);
 
             //TODO: this.Created
             return this.Ok();
