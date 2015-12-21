@@ -14,7 +14,6 @@
                         notifier.success('Registration successful!');
                     }, function (err) {
                         var errors = err.data.ModelState[''] || err.data.ModelState['model.Password'];
-                        debugger;
                         for (var errorIndex in errors) {
                             notifier.error(errors[errorIndex]);
                         }
