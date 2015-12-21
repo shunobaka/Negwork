@@ -1,37 +1,29 @@
 ﻿<div class="col-md-8 col-md-offset-2 jumbotron text-center">
-    <div class="row">
-        <div class="col-md-4">
-            <label for="order">Order by:</label>
-            <select class="form-control" id="order">
-                <option selected="selected">Date</option>
-                <option>Rating</option>
-                <option>Title</option>
-            </select>
-        </div>
-        <div class="col-md-4">
-            <label for="filter">Filter:</label>
-            <input type="text" class="form-control" id="filter" />
-        </div>
-        <div class="col-md-4">
-            <label for="page-size">Page size:</label>
-            <select class="form-control" id="page-size">
-                <option selected="selected" value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-            </select>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <ul class="pagination">
-                <li class="disabled"><a href="#">«</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">»</a></li>
-            </ul>
+    <div filter-panel></div>
+
+    <div ng-repeat="article in vm.articles">
+        <div class="row">
+            <div class="col-md-2 center">
+                <div class="row">
+                    <br />
+                    <h6><b>{{article.Author.UserName}}</b></h6>
+                </div>
+                <div class="row">
+                    <img ng-src="{{article.Author.ProfileImage || vm.DefaultProfile}}" width="150" height="150"/>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-offset-1">
+                <div class="row">
+                    <h3>{{article.Title}}</h3>
+                </div>
+                <div class="row text-left">
+                    <p>{{article.Description}}</p>
+                </div>
+                <div class="row">
+                    <div class="pull-right">Publish date: {{article.DatePublished}}</div>
+                    <div class="pull-left">Rating: {{article.Rating}}</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
