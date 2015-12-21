@@ -16,7 +16,7 @@
 
         [Key]
         public int Id { get; set; }
-        
+
         [Required]
         [MinLength(ModelConstants.MIN_ARTICLE_TITLE_LENGHT)]
         [MaxLength(ModelConstants.MAX_ARTICLE_TITLE_LENGTH)]
@@ -29,8 +29,12 @@
         public DateTime? DatePublished { get; set; }
 
         public string AuthorId { get; set; }
-        
+
         public User Author { get; set; }
+
+        public int AllRatings { get; set; }
+
+        public int NumberOfRatings { get; set; }
 
         public virtual ICollection<ArticleRating> Ratings
         {

@@ -44,6 +44,9 @@
         [MaxLength(ModelConstants.MAX_USER_ADDITIONAL_INFO_LENGTH)]
         public string AdditionalInfo { get; set; }
 
+        [Url]
+        public string ProfileImage { get; set; }
+
         public virtual ICollection<Article> Articles
         {
             get
