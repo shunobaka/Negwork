@@ -13,12 +13,3 @@
     padding-top: 15px !important;
     padding-bottom: 15px !important;
 }
-
-.ng-enter {
-    transition: 0.7s ease-in;
-    opacity: 0;
-}
-
-.ng-enter-active {
-    opacity: 1;
-}
