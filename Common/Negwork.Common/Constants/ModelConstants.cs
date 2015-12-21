@@ -13,6 +13,9 @@
         public const int MAX_ARTICLE_TITLE_LENGTH = 100;
         public const int MIN_ARTICLE_TITLE_LENGHT = 5;
 
+        public const int MAX_ARTICLE_CATEGORY_LENGTH = 15;
+        public const int MIN_ARTICLE_CATEGORY_LENGHT = 2;
+
         public const int MIN_ARTICLE_DESCRIPTION_LENGTH = 100;
 
         public const int MIN_ARTICLE_RATING_VALUE = 1;
