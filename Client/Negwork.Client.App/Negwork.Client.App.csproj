@@ -77,11 +77,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <Content Include="partials\articles\articles.html" />
+    <Content Include="partials\articles\create-article.html" />
     <Content Include="partials\common\header.html" />
     <Content Include="partials\home\home.html" />
     <Content Include="partials\identity\login.html" />
     <Content Include="partials\identity\register.html" />
     <Content Include="scripts\app\app.js" />
+    <Content Include="scripts\app\articles\add-article-controller.js" />
+    <Content Include="scripts\app\articles\articles-controller.js" />
+    <Content Include="scripts\app\articles\articles-service.js" />
+    <Content Include="scripts\app\common\data.js" />
     <Content Include="scripts\app\common\datepicker-directive.js" />
     <Content Include="scripts\app\common\main-controller.js" />
     <Content Include="scripts\app\common\header-directive.js" />
@@ -91,12 +97,14 @@
     <Content Include="scripts\app\identity\identity-service.js" />
     <Content Include="scripts\app\identity\login-controller.js" />
     <Content Include="scripts\app\identity\register-controller.js" />
+    <Content Include="styles\animation.css" />
     <Content Include="styles\main.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
