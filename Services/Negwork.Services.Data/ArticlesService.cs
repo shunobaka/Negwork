@@ -43,5 +43,31 @@
 
             return newArticle;
         }
+
+        public Article RateArticle(string userId, int id, int rating)
+        {
+            var article = articles
+                .All()
+                .Where(a => a.Id == id)
+                .FirstOrDefault();
+
+            if (article == null)
+            {
+                return null;
+            }
+
+            var articleRating = new ArticleRating()
+            {
+                UserId = userId,
+                Value = rating
+            };
+
+            article.Ratings.Add(articleRating);
+            article.AllRatings += rating;
+            article.NumberOfRatings++;
+            articles.SaveChanges();
+
+            return article;
+        }
     }
 }

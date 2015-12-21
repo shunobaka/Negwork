@@ -11,5 +11,7 @@
         Article GetById(int id);
 
         Article CreateArticle(string userId, string title, string description, DateTime? publishDate);
+
+        Article RateArticle(string userId, int id, int rating);
     }
 }
