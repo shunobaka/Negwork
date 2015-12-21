@@ -7,7 +7,7 @@
         vm.createArticle = function createArticle(article, form) {
             if (form.$valid) {
                 article.datePublished = new Date();
-                debugger;
+
                 articles
                     .add(article)
                     .then(function (response) {

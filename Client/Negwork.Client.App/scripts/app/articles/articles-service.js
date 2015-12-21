@@ -10,6 +10,10 @@
             return data.get('/api/articles');
         }
 
+        function rate(id, rating) {
+            return data.post('/api/ratings/' + id, rating);
+        }
+
         return {
             add: add,
             all: all

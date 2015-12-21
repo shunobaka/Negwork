@@ -1,8 +1,20 @@
 ﻿(function () {
     'use strict';
 
-    var articlesController = function articlesController(notifier, articles) {
+    var articlesController = function articlesController(auth, notifier, articles) {
         var vm = this;
+
+        vm.isAuthenticated = auth.isAuthenticated();
+
+        vm.rateArticle = function (index, rating) {
+            var id = vm.articles[index];
+            articles.rate(id, rating)
+                .then(function () {
+                    notifier.success('Article was successfully rated!');
+                }, function (err) {
+                    notifier.error(err);
+                })
+        };
 
         articles.all()
             .then(function (response) {
@@ -15,5 +27,5 @@
 
     angular
         .module('negwork.controllers')
-        .controller('ArticlesController', ['notifier', 'articles', articlesController])
+        .controller('ArticlesController', ['auth', 'notifier', 'articles', articlesController])
 }());

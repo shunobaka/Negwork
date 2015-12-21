@@ -6,22 +6,40 @@
             <div class="col-md-2 center">
                 <div class="row">
                     <br />
-                    <h6><b>{{article.Author.UserName}}</b></h6>
+                    <img ng-src="{{article.Author.ProfileImage || vm.DefaultProfile}}" width="150" height="150" />
                 </div>
                 <div class="row">
-                    <img ng-src="{{article.Author.ProfileImage || vm.DefaultProfile}}" width="150" height="150"/>
+                    <h5>{{article.Author.UserName}}</h5>
                 </div>
             </div>
             <div class="col-md-8 col-md-offset-1">
                 <div class="row">
-                    <h3>{{article.Title}}</h3>
+                    <h2>{{article.Title}}</h2>
                 </div>
                 <div class="row text-left">
                     <p>{{article.Description}}</p>
                 </div>
                 <div class="row">
-                    <div class="pull-right">Publish date: {{article.DatePublished}}</div>
-                    <div class="pull-left">Rating: {{article.Rating}}</div>
+                    <div class="pull-left">
+                        <div>Rating: {{article.Rating}}</div>
+                        <div ng-if="vm.isAuthenticated" class="row">
+                            <div class="col-md-4 form-group form-group-sm">
+                                <button class="btn btn-md" ng-click="vm.rateArticle($index, rating)">Rate</button>
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-control" ng-model="rating">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        Publish date: {{article.DatePublished | dateFormat}}
+                    </div>
                 </div>
             </div>
         </div>
