@@ -47,8 +47,8 @@
 
             $http.get(apiUrl + '/api/users/identity')
                 .then(function (identityResponse) {
-                    identity.setUser(identityResponse);
-                    deferred.resolve(identityResponse);
+                    identity.setUser(identityResponse.data);
+                    deferred.resolve(identityResponse.data);
                 });
 
             return deferred.promise;
