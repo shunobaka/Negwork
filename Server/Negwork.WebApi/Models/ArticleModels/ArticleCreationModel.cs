@@ -16,9 +16,12 @@
         public string Title { get; set; }
 
         [Required]
+        [MinLength(ModelConstants.MIN_ARTICLE_CATEGORY_LENGHT)]
+        [MaxLength(ModelConstants.MAX_ARTICLE_CATEGORY_LENGTH)]
+        public string Category { get; set; }
+
+        [Required]
         [MinLength(ModelConstants.MIN_ARTICLE_DESCRIPTION_LENGTH)]
         public string Description { get; set; }
-
-        public DateTime? DatePublished { get; set; }
     }
 }
