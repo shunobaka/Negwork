@@ -79,6 +79,7 @@
     <Content Include="index.html" />
     <Content Include="partials\articles\articles.html" />
     <Content Include="partials\articles\create-article.html" />
+    <Content Include="partials\common\filter-panel.html" />
     <Content Include="partials\common\header.html" />
     <Content Include="partials\home\home.html" />
     <Content Include="partials\identity\login.html" />
@@ -89,6 +90,7 @@
     <Content Include="scripts\app\articles\articles-service.js" />
     <Content Include="scripts\app\common\data.js" />
     <Content Include="scripts\app\common\datepicker-directive.js" />
+    <Content Include="scripts\app\common\filter-directive.js" />
     <Content Include="scripts\app\common\main-controller.js" />
     <Content Include="scripts\app\common\header-directive.js" />
     <Content Include="scripts\app\common\notifier-service.js" />
