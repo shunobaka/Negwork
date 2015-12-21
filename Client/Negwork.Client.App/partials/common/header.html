@@ -32,7 +32,7 @@
                 <li ng-if="!vm.currentUser"><a href="/identity/login">Login</a></li>
                 <li ng-if="!vm.currentUser"><a href="/identity/register">Register</a></li>
                 <li class="dropdown" ng-if="vm.currentUser">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{vm.currentUser.UserName}} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/user/{{vm.currentUser}}/">Profile</a></li>
                         <li><a href="/user/{{vm.currentUser}}/settings">Settings</a></li>
