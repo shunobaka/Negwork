@@ -1,6 +1,8 @@
 (function() {
     'use strict';
 
+    var CONTROLLER_AS_VIEW_MODEL = 'vm';
+
     angular.module('negwork.services', []);
     angular.module('negwork.directives', []);
     angular.module('negwork.controllers', []);
@@ -19,17 +21,27 @@
             .when('/home', {
                 templateUrl: 'partials/home/home.html',
                 controller: 'HomeController',
-                controllerAs: 'vm'
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
             .when('/identity/login', {
                 templateUrl: 'partials/identity/login.html',
                 controller: 'LoginController',
-                controllerAs: 'vm'
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
             .when('/identity/register', {
                 templateUrl: 'partials/identity/register.html',
                 controller: 'RegisterController',
-                controllerAs: 'vm'
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
+            .when('/articles', {
+                templateUrl: 'partials/articles/articles.html',
+                controller: 'ArticlesController',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
+            .when('/articles/create', {
+                templateUrl: 'partials/articles/create-article.html',
+                controller: 'AddArticleController',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
             .otherwise({
                 redirectTo: '/home'

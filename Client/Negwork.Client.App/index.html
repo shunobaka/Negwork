@@ -5,6 +5,7 @@
     <title>Document</title>
     <base href="/">
     <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/animation.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.2/toastr.css" rel="stylesheet" />
@@ -19,16 +20,19 @@
 </head>
 <body ng-app="negwork" ng-cloak ng-controller="MainController as vm">
     <div header></div>
+
     <div class="view-animate-container">
         <div ng-view class="view-animate"></div>
     </div>
 
     <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/common/data.js"></script>
 
     <!-- Services -->
     <script src="scripts/app/identity/identity-service.js"></script>
     <script src="scripts/app/identity/auth-service.js"></script>
     <script src="scripts/app/common/notifier-service.js"></script>
+    <script src="scripts/app/articles/articles-service.js"></script>
 
     <!-- Directives -->
     <script src="scripts/app/common/header-directive.js"></script>
@@ -39,5 +43,7 @@
     <script src="scripts/app/home/home-controller.js"></script>
     <script src="scripts/app/identity/login-controller.js"></script>
     <script src="scripts/app/identity/register-controller.js"></script>
+    <script src="scripts/app/articles/articles-controller.js"></script>
+    <script src="scripts/app/articles/add-article-controller.js"></script>
 </body>
 </html>
