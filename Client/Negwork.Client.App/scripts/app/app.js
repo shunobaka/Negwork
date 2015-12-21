@@ -3,6 +3,7 @@
 
     var CONTROLLER_AS_VIEW_MODEL = 'vm';
 
+    angular.module('negwork.filters', []);
     angular.module('negwork.services', []);
     angular.module('negwork.directives', []);
     angular.module('negwork.controllers', []);
@@ -49,7 +50,7 @@
     }
 
     var negNews = angular
-        .module('negwork', ['ngRoute', 'ngCookies', 'ngAnimate', 'negwork.controllers', 'negwork.services', 'negwork.directives'])
+        .module('negwork', ['ngRoute', 'ngCookies', 'ngAnimate', 'negwork.controllers', 'negwork.services', 'negwork.directives', 'negwork.filters'])
         .config(['$routeProvider', '$locationProvider', config])
         .run(['$http', '$cookies', 'auth', run])
         .constant('apiUrl', 'http://localhost:40471')
