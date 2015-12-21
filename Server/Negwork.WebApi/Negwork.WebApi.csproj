@@ -226,11 +226,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\RatingsController.cs" />
+    <Compile Include="Extensions\QueryableExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Mappings\IHaveCustomMappings.cs" />
     <Compile Include="Infrastructure\Mappings\IMapFrom.cs" />
+    <Compile Include="Models\ArticleModels\ArticleFilterModel.cs" />
+    <Compile Include="Models\RatingModels\RatingCreationModel.cs" />
     <Compile Include="Models\UserModels\AccountBindingModels.cs" />
     <Compile Include="Models\UserModels\AccountViewModels.cs" />
     <Compile Include="Models\ArticleModels\ArticleCreationModel.cs" />
