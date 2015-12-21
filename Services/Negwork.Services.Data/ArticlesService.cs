@@ -9,10 +9,12 @@
     public class ArticlesService : IArticlesService
     {
         private IRepository<Article> articles;
+        private IRepository<ArticleRating> ratings;
 
-        public ArticlesService(IRepository<Article> articles)
+        public ArticlesService(IRepository<Article> articles, IRepository<ArticleRating> ratings)
         {
             this.articles = articles;
+            this.ratings = ratings;
         }
 
         public IQueryable<Article> GetAll()
@@ -28,14 +30,15 @@
                 .FirstOrDefault();
         }
 
-        public Article CreateArticle(string userId, string title, string description, DateTime? publishDate)
+        public Article CreateArticle(string userId, string title, string description, DateTime publishDate, string category)
         {
             var newArticle = new Article()
             {
                 Title = title,
                 AuthorId = userId,
                 Description = description,
-                DatePublished = publishDate
+                DatePublished = publishDate,
+                Category = category
             };
 
             this.articles.Add(newArticle);
@@ -44,8 +47,15 @@
             return newArticle;
         }
 
-        public Article RateArticle(string userId, int id, int rating)
+        public ServiceResponse RateArticle(string userId, int id, int rating)
         {
+            var alreadyRated = this.ratings.All().Any(r => r.UserId == userId && r.ArticleId == id);
+
+            if (alreadyRated)
+            {
+                return ServiceResponse.Duplicated;
+            }
+
             var article = articles
                 .All()
                 .Where(a => a.Id == id)
@@ -53,7 +63,12 @@
 
             if (article == null)
             {
-                return null;
+                return ServiceResponse.NotFound;
+            }
+
+            if (article.AuthorId == userId)
+            {
+                return ServiceResponse.Own;
             }
 
             var articleRating = new ArticleRating()
@@ -67,7 +82,7 @@
             article.NumberOfRatings++;
             articles.SaveChanges();
 
-            return article;
+            return ServiceResponse.Ok;
         }
     }
 }
