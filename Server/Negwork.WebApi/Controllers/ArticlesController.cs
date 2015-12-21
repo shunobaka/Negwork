@@ -10,6 +10,7 @@
     using System.Linq;
     using System.Web.Http;
 
+    [RoutePrefix("api/Articles")]
     public class ArticlesController : ApiController
     {
         private IArticlesService data;
@@ -18,19 +19,13 @@
         {
             this.data = data;
         }
-
+        
         public IHttpActionResult Get()
         {
             var articles = this.data
                 .GetAll()
                 .ProjectTo<ArticleResponseModel>()
                 .ToList();
-
-
-            if (articles.Count == 0)
-            {
-                return this.NotFound();
-            }
 
             return this.Ok(articles);
         }
@@ -60,7 +55,7 @@
         {
             if (!this.ModelState.IsValid)
             {
-                this.BadRequest(this.ModelState);
+                return this.BadRequest(this.ModelState);
             }
 
             var created = this.data.CreateArticle(
