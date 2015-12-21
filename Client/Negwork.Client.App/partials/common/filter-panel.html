@@ -1,5 +1,5 @@
 ﻿<div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3 col-md-offset-1">
         <label for="order">Order by:</label>
         <select class="form-control" id="order">
             <option selected="selected">Date</option>
@@ -7,17 +7,21 @@
             <option>Title</option>
         </select>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <label for="filter">Filter:</label>
         <input type="text" class="form-control" id="filter" />
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <label for="page-size">Page size:</label>
         <select class="form-control" id="page-size">
             <option selected="selected" value="10">10</option>
             <option value="25">25</option>
             <option value="50">50</option>
         </select>
+    </div>
+    <div class="col-md-1 bottom-align">
+        <label>Apply</label>
+        <button class="form-control btn btn-primary">Go</button>
     </div>
 </div>
 <div class="row">
