@@ -34,10 +34,13 @@
                 controller: 'RegisterController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
-            .when('/articles', {
+            .when('/articles/all', {
                 templateUrl: 'partials/articles/articles.html',
                 controller: 'ArticlesController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
+            .when('/articles/categories', {
+                //templateUrl:
             })
             .when('/articles/create', {
                 templateUrl: 'partials/articles/create-article.html',
