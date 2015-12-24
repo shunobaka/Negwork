@@ -14,6 +14,8 @@
             var day = date.getDate();
             var month = monthNames[date.getMonth()];
             var year = date.getFullYear();
+            var hour = date.getHours();
+            var minutes = date.getMinutes();
 
             var resultDate = day + ' ' + month + ' ' + year;
 
