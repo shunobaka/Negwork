@@ -35,15 +35,11 @@
                 })
         };
 
-        vm.search = function (request, page) {
-            request = request || {};
-            page = page || vm.currentPage
-            request.page = page;
-            vm.currentPage = page;
+        vm.search = function () {
+            vm.request = vm.request || {};
+            vm.request.page = vm.currentPage;
 
-            debugger;
-
-            articles.search(request)
+            articles.search(vm.request)
                 .then(function (response) {
                     vm.articles = response;
                 }, function (err) {
@@ -51,20 +47,20 @@
                 });
         };
 
-        vm.goToNextPage = function (request) {
+        vm.goToNextPage = function () {
             if (vm.currentPage < vm.pages.length) {
                 vm.currentPage++;
             }
 
-            vm.search(request, vm.currentPage);
+            vm.search();
         };
 
-        vm.goToPreviousPage = function (request) {
+        vm.goToPreviousPage = function () {
             if (vm.currentPage > 1) {
                 vm.currentPage--;
             }
 
-            vm.search(request, vm.currentPage);
+            vm.search();
         };
     }
 
