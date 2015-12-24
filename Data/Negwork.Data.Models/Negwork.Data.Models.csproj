@@ -60,9 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Article.cs" />
-    <Compile Include="ArticleRating.cs" />
+    <Compile Include="Rating.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="Image.cs" />
-    <Compile Include="ImageVote.cs" />
+    <Compile Include="Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>

@@ -14,15 +14,15 @@
     {
         private ICollection<Article> articles;
         private ICollection<Image> images;
-        private ICollection<ArticleRating> ratings;
-        private ICollection<ImageVote> votes;
+        private ICollection<Rating> ratings;
+        private ICollection<Vote> votes;
 
         public User()
         {
             this.articles = new HashSet<Article>();
             this.images = new HashSet<Image>();
-            this.ratings = new HashSet<ArticleRating>();
-            this.votes = new HashSet<ImageVote>();
+            this.ratings = new HashSet<Rating>();
+            this.votes = new HashSet<Vote>();
         }
 
 
@@ -71,7 +71,7 @@
             }
         }
 
-        public virtual ICollection<ImageVote> Votes
+        public virtual ICollection<Vote> Votes
         {
             get
             {
@@ -83,7 +83,7 @@
             }
         }
 
-        public virtual ICollection<ArticleRating> Ratings
+        public virtual ICollection<Rating> Ratings
         {
             get
             {

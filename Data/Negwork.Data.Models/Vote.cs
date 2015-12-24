@@ -3,7 +3,7 @@
     using Common;
     using System.ComponentModel.DataAnnotations;
 
-    public class ImageVote
+    public class Vote
     {
         [Key]
         public int Id { get; set; }

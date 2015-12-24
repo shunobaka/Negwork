@@ -3,7 +3,7 @@
     using Common.Constants;
     using System.ComponentModel.DataAnnotations;
 
-    public class ArticleRating
+    public class Rating
     {
         [Key]
         public int Id { get; set; }

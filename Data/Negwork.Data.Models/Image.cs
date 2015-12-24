@@ -6,11 +6,11 @@
 
     public class Image
     {
-        private ICollection<ImageVote> votes;
+        private ICollection<Vote> votes;
 
         public Image()
         {
-            this.votes = new HashSet<ImageVote>();
+            this.votes = new HashSet<Vote>();
         }
 
         [Key]
@@ -29,7 +29,7 @@
         
         public User Owner { get; set; }
 
-        public virtual ICollection<ImageVote> Votes
+        public virtual ICollection<Vote> Votes
         {
             get
             {
