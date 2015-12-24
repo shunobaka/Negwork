@@ -1,35 +1,59 @@
-﻿<div class="row">
-    <div class="col-md-3 col-md-offset-1">
-        <label for="order">Order by:</label>
-        <select class="form-control" ng-model="request.orderBy" id="order">
-            <option selected="selected">Date</option>
-            <option>Rating</option>
-            <option>Title</option>
-        </select>
+﻿<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4">
+            <label for="order">Order by:</label>
+            <select class="form-control" ng-model="vm.request.orderBy" id="order">
+                <option value="">Select</option>
+                <option value="date">Date</option>
+                <option value="rating">Rating</option>
+                <option value="userrating">User rating</option>
+                <option value="title">Title</option>
+                <option value="category">Category</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="ordertype">Order type:</label>
+            <select class="form-control" ng-model="vm.request.orderType" id="ordertype">
+                <option value="">Select</option>
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="filterBy">Filter by:</label>
+            <select class="form-control" ng-model="vm.request.filterBy" id="filterBy">
+                <option value="">Select</option>
+                <option value="title">Title</option>
+                <option value="user">User</option>
+                <option value="description">Description</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="filter">Filter:</label>
+            <input type="text" class="form-control" ng-model="vm.request.filter" id="filter" />
+        </div>
+        <div class="col-md-4">
+            <label>Apply</label>
+            <button class="form-control btn btn-primary" ng-click="vm.search()">Go</button>
+        </div>
+        <div class="col-md-4">
+            <label for="page-size">Page size:</label>
+            <select class="form-control" ng-model="vm.request.pageSize" id="page-size">
+                <option selected="selected" value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+            </select>
+        </div>
     </div>
-    <div class="col-md-3">
-        <label for="filter">Filter:</label>
-        <input type="text" class="form-control" ng-model="request.filter" id="filter" />
-    </div>
-    <div class="col-md-3">
-        <label for="page-size">Page size:</label>
-        <select class="form-control" ng-model="request.pageSize" id="page-size">
-            <option selected="selected" value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-        </select>
-    </div>
-    <div class="col-md-1 bottom-align">
-        <label>Apply</label>
-        <button class="form-control btn btn-primary" ng-click="vm.search(request)">Go</button>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <ul class="pagination">
-            <li><a href="#" ng-click="vm.goToPreviousPage()">«</a></li>
-            <li ng-repeat="page in vm.pages" ng-class="page == vm.currentPage ? 'active' : ''"><a href="#" ng-click="vm.search(request, page)">{{page}}</a></li>
-            <li><a href="#" ng-click="vm.goToNextPage()">»</a></li>
-        </ul>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <ul class="pagination">
+                <li><a href="#" ng-click="vm.goToPreviousPage()">«</a></li>
+                <li ng-repeat="page in vm.pages" ng-class="page == vm.currentPage ? 'active' : ''">
+                    <a href="#" value="{{page}}" ng-model="vm.currentPage" ng-click="vm.search()">{{page}}</a>
+                </li>
+                <li><a href="#" ng-click="vm.goToNextPage()">»</a></li>
+            </ul>
+        </div>
     </div>
 </div>

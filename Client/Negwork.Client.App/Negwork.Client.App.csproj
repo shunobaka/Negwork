@@ -88,6 +88,8 @@
     <Content Include="scripts\app\articles\add-article-controller.js" />
     <Content Include="scripts\app\articles\articles-controller.js" />
     <Content Include="scripts\app\articles\articles-service.js" />
+    <Content Include="scripts\app\categories\add-category-controller.js" />
+    <Content Include="scripts\app\categories\categories-service.js" />
     <Content Include="scripts\app\common\data.js" />
     <Content Include="scripts\app\common\date-filter.js" />
     <Content Include="scripts\app\common\datepicker-directive.js" />
@@ -108,7 +110,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="partials\categories\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

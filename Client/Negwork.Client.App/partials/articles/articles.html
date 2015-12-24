@@ -30,6 +30,7 @@
                     <div class="pull-left">
                         <div class="text-left">Rating: {{article.Rating | roundToDecimal: 2}}</div>
                         <div>Publish date: {{article.DatePublished | dateFormat}}</div>
+                        <div>Category: {{article.Category.Name}}</div>
                     </div>
                     <div class="pull-right">
                         <div ng-if="vm.isAuthenticated" class="row">
