@@ -9,9 +9,9 @@
     public class ArticlesService : IArticlesService
     {
         private IRepository<Article> articles;
-        private IRepository<ArticleRating> ratings;
+        private IRepository<Rating> ratings;
 
-        public ArticlesService(IRepository<Article> articles, IRepository<ArticleRating> ratings)
+        public ArticlesService(IRepository<Article> articles, IRepository<Rating> ratings)
         {
             this.articles = articles;
             this.ratings = ratings;
@@ -30,7 +30,7 @@
                 .FirstOrDefault();
         }
 
-        public Article CreateArticle(string userId, string title, string description, DateTime publishDate, string category)
+        public Article CreateArticle(string userId, string title, string description, DateTime publishDate, int categoryId)
         {
             var newArticle = new Article()
             {
@@ -38,7 +38,7 @@
                 AuthorId = userId,
                 Description = description,
                 DatePublished = publishDate,
-                Category = category
+                CategoryId = categoryId
             };
 
             this.articles.Add(newArticle);
@@ -71,7 +71,7 @@
                 return ServiceResponse.Own;
             }
 
-            var articleRating = new ArticleRating()
+            var articleRating = new Rating()
             {
                 UserId = userId,
                 Value = rating

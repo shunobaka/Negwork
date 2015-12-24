@@ -6,19 +6,17 @@
     using System;
     using System.ComponentModel.DataAnnotations;
     using AutoMapper;
+    using CategoryModels;
 
     public class ArticleResponseModel : IMapFrom<Article>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
-        [Required]
-        [MinLength(ModelConstants.MIN_ARTICLE_TITLE_LENGHT)]
-        [MaxLength(ModelConstants.MAX_ARTICLE_TITLE_LENGTH)]
         public string Title { get; set; }
-
-        [Required]
-        [MinLength(ModelConstants.MIN_ARTICLE_DESCRIPTION_LENGTH)]
+        
         public string Description { get; set; }
+
+        public CategoryResponseModel Category { get; set; }
 
         public DateTime? DatePublished { get; set; }
 

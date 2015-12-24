@@ -10,7 +10,7 @@
 
         Article GetById(int id);
 
-        Article CreateArticle(string userId, string title, string description, DateTime publishDate, string category);
+        Article CreateArticle(string userId, string title, string description, DateTime publishDate, int categoryId);
 
         ServiceResponse RateArticle(string userId, int id, int rating);
     }

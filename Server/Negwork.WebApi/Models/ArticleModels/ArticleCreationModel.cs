@@ -15,10 +15,7 @@
             ErrorMessage = ErrorMessages.ATICLE_TITLE_TOO_LONG)]
         public string Title { get; set; }
 
-        [Required]
-        [MinLength(ModelConstants.MIN_ARTICLE_CATEGORY_LENGHT)]
-        [MaxLength(ModelConstants.MAX_ARTICLE_CATEGORY_LENGTH)]
-        public string Category { get; set; }
+        public int CategoryId { get; set; }
 
         [Required]
         [MinLength(ModelConstants.MIN_ARTICLE_DESCRIPTION_LENGTH)]
