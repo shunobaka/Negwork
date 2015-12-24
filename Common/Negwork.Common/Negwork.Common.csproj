@@ -45,7 +45,6 @@
     <Compile Include="Constants\ErrorMessages.cs" />
     <Compile Include="Constants\ModelConstants.cs" />
     <Compile Include="Gender.cs" />
-    <Compile Include="OrderBy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vote.cs" />
   </ItemGroup>
