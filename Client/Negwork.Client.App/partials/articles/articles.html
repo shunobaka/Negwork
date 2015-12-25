@@ -1,5 +1,9 @@
 ﻿<div class="col-md-8 col-md-offset-2 jumbotron text-center">
-    <div filter-panel></div>
+    <div ng-if="vm.isAuthenticated" filter-panel></div>
+
+    <div ng-if="!vm.isAuthenticated">
+        <h2>If you enjoy the content - login for more.</h2>
+    </div>
 
     <div class="row" ng-repeat="article in vm.articles">
         <div class="col-md-2 center">
@@ -26,12 +30,13 @@
                 <p class="word-break"><small>{{article.Description}}</small></p>
             </div>
             <div class="row">
-                <div class="pull-left">
-                    <div class="text-left">Rating: {{article.Rating | roundToDecimal: 2}}</div>
-                    <div>Publish date: {{article.DatePublished | dateFormat}}</div>
+                <div class="text-left pull-left">
+                    <div>Rating: {{article.Rating | roundToDecimal: 2}}</div>
                     <div>Category: {{article.Category.Name}}</div>
+                    <div>Publish date: {{article.DatePublished | dateFormat}}</div>
                 </div>
                 <div class="pull-right">
+                    <br />
                     <div ng-if="vm.isAuthenticated" class="row">
                         <div class="col-md-4 form-group form-group-sm">
                             <button class="btn btn-md btn-success" ng-click="vm.rateArticle($index, rating)">Rate</button>

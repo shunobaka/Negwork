@@ -1,9 +1,10 @@
 ﻿(function () {
     'use strict';
 
-    var categoriesArticlesController = function categoriesArticlesController(categories) {
+    var categoriesArticlesController = function categoriesArticlesController(auth, categories) {
         var vm = this;
         vm.categoryFor = 'articles';
+        vm.isAuthenticated = auth.isAuthenticated();
 
         categories.getForArticles()
             .then(function (articlesCategories) {
@@ -13,5 +14,5 @@
 
     angular
         .module('negwork.controllers')
-        .controller('CategoriesArticlesController', ['categories', categoriesArticlesController])
+        .controller('CategoriesArticlesController', ['auth', 'categories', categoriesArticlesController])
 }());
