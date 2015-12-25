@@ -12,7 +12,7 @@
         [MinLength(ModelConstants.MIN_ARTICLE_TITLE_LENGHT, 
             ErrorMessage = ErrorMessages.ARTICLE_TITLE_TOO_SHORT)]
         [MaxLength(ModelConstants.MAX_ARTICLE_TITLE_LENGTH,
-            ErrorMessage = ErrorMessages.ATICLE_TITLE_TOO_LONG)]
+            ErrorMessage = ErrorMessages.ARTICLE_TITLE_TOO_LONG)]
         public string Title { get; set; }
 
         public int CategoryId { get; set; }

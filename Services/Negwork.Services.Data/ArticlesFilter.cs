@@ -15,7 +15,7 @@
 
             if (filters.Category != null)
             {
-                query = query.Where(a => a.Category.Name == filters.Category);
+                query = query.Where(a => a.Category.Name.ToLower() == filters.Category.ToLower());
             }
 
             query = query.OrderByDescending(a => a.DatePublished);
@@ -81,17 +81,17 @@
             {
                 if (filters.FilterBy == "title")
                 {
-                    query = query.Where(a => a.Title.Contains(filters.Filter));
+                    query = query.Where(a => a.Title.ToLower().Contains(filters.Filter.ToLower()));
                 }
 
                 if (filters.FilterBy == "user")
                 {
-                    query = query.Where(a => a.Author.UserName.Contains(filters.Filter));
+                    query = query.Where(a => a.Author.UserName.ToLower().Contains(filters.Filter.ToLower()));
                 }
 
                 if (filters.FilterBy == "description")
                 {
-                    query = query.Where(a => a.Description.Contains(filters.Filter));
+                    query = query.Where(a => a.Description.ToLower().Contains(filters.Filter.ToLower()));
                 }
             }
 
