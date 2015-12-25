@@ -48,7 +48,12 @@
                 return this.BadRequest(this.ModelState);
             }
 
-            var category = this.data.CreateCategory(model.Name);
+            var category = this.data.CreateCategory(model.Name, model.Image);
+
+            if (category == null)
+            {
+                return this.BadRequest("Category name is already taken.");
+            }
 
             return this.Ok(category);
         }

@@ -41,11 +41,22 @@
                 .FirstOrDefault();
         }
 
-        public Category CreateCategory(string name)
+        public Category CreateCategory(string name, string image)
         {
+            var categoryWithName = this.categories
+                .All()
+                .Where(c => c.Name == name)
+                .FirstOrDefault();
+
+            if (categoryWithName != null)
+            {
+                return null;
+            }
+
             var category = new Category()
             {
-                Name = name
+                Name = name,
+                Image = image
             };
 
             categories.Add(category);

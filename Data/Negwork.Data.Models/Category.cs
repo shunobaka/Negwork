@@ -25,6 +25,10 @@
         [MaxLength(ModelConstants.MAX_ARTICLE_CATEGORY_LENGTH)]
         public string Name { get; set; }
 
+        [Url]
+        [Required]
+        public string Image { get; set; }
+
         public virtual ICollection<Article> Articles
         {
             get

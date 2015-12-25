@@ -13,6 +13,6 @@
 
         Category GetById(int id);
 
-        Category CreateCategory(string name);
+        Category CreateCategory(string name, string image);
     }
 }
