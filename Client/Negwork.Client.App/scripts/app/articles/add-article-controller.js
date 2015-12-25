@@ -1,8 +1,13 @@
 ﻿(function () {
     'use strict';
 
-    var addArticleController = function addArticleController($location, notifier, articles) {
+    var addArticleController = function addArticleController($location, notifier, categories, articles) {
         var vm = this;
+
+        categories.getAll()
+            .then(function (allCategories) {
+                vm.categories = allCategories;
+            });
 
         vm.createArticle = function createArticle(article, form) {
             if (form.$valid) {
@@ -30,5 +35,5 @@
 
     angular
         .module('negwork.controllers')
-        .controller('AddArticleController', ['$location', 'notifier', 'articles', addArticleController])
+        .controller('AddArticleController', ['$location', 'notifier', 'categories', 'articles', addArticleController])
 }());

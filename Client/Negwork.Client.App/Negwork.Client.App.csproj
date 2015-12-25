@@ -91,6 +91,7 @@
     <Content Include="scripts\app\articles\articles-controller.js" />
     <Content Include="scripts\app\articles\articles-service.js" />
     <Content Include="scripts\app\categories\add-category-controller.js" />
+    <Content Include="scripts\app\categories\categories-articles-controller.js" />
     <Content Include="scripts\app\categories\categories-service.js" />
     <Content Include="scripts\app\common\data.js" />
     <Content Include="scripts\app\common\date-filter.js" />

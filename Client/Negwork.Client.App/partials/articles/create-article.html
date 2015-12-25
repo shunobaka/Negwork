@@ -11,8 +11,11 @@
         </div>
         <div class="form-group">
             <label for="category">Category:</label>
-            <input type="text" class="form-control" id="category" required="required" placeholder="Category" ng-model="article.category" />
+            <select class="form-control" id="category" required="required" ng-model="article.categoryId">
+                <option value="">Select category</option>
+                <option ng-repeat="category in vm.categories" value="{{category.Id}}">{{category.Name}}</option>
+            </select>
         </div>
-        <button type="submit" class="btn btn-success btn-block" ng-disabled="articleForm.$invalid" ng-click="vm.createArticle(article, articleForm)">Post</button>
+        <button type="submit" class="btn btn-success btn-block" ng-disabled="articleForm.$invalid || article.categoryId.Length == 0" ng-click="vm.createArticle(article, articleForm)">Post</button>
     </form>
 </div>
