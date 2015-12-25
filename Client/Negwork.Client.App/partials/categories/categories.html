@@ -1,5 +1,15 @@
 ﻿<div class="col-md-8 col-md-offset-2 jumbotron">
-    <div>
-        <a class="btn btn-primary" href="/categories/create">Create category</a>
+    <div class="col-md-6 col-md-offset-3">
+        <a class="btn btn-primary btn-block" href="/categories/create">Create category</a>
+    </div>
+    <div class="col-md-12" ng-repeat="category in vm.categories">
+        <div class="col-md-3">
+            <div class="row">
+                <img ng-src="{{category.Image}}" alt="image for category" />
+            </div>
+            <div class="row">
+                <a href="{{vm.categoryFor}}/category/{{category.Name}}"><h5>{{category.Name}}</h5></a>
+            </div>
+        </div>
     </div>
 </div>

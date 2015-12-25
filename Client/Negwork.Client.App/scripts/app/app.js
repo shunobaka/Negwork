@@ -40,7 +40,9 @@
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
             .when('/articles/categories', {
-                templateUrl: 'partials/categories/categories.html'
+                templateUrl: 'partials/categories/categories.html',
+                controller: 'CategoriesArticlesController',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
             .when('/articles/create', {
                 templateUrl: 'partials/articles/create-article.html',
