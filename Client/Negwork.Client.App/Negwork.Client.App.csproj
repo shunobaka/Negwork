@@ -83,6 +83,7 @@
     <Content Include="partials\categories\create-category.html" />
     <Content Include="partials\common\filter-panel.html" />
     <Content Include="partials\common\header.html" />
+    <Content Include="partials\common\unauthorized.html" />
     <Content Include="partials\home\home.html" />
     <Content Include="partials\identity\login.html" />
     <Content Include="partials\identity\register.html" />
