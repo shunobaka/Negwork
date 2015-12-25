@@ -40,11 +40,21 @@
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
             .when('/articles/categories', {
-                //templateUrl:
+                templateUrl: 'partials/categories/categories.html'
             })
             .when('/articles/create', {
                 templateUrl: 'partials/articles/create-article.html',
                 controller: 'AddArticleController',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
+            .when('/articles/category/:category', {
+                templateUrl: 'partials/articles/articles.html',
+                controller: 'ArticlesController',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
+            .when('/categories/create', {
+                templateUrl: 'partials/categories/create-category.html',
+                controller: 'AddCategoryController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
             .otherwise({
