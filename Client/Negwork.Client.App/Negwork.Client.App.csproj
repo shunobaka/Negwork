@@ -79,6 +79,8 @@
     <Content Include="index.html" />
     <Content Include="partials\articles\articles.html" />
     <Content Include="partials\articles\create-article.html" />
+    <Content Include="partials\categories\categories.html" />
+    <Content Include="partials\categories\create-category.html" />
     <Content Include="partials\common\filter-panel.html" />
     <Content Include="partials\common\header.html" />
     <Content Include="partials\home\home.html" />
@@ -110,9 +112,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="partials\categories\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
