@@ -1,51 +1,49 @@
 ﻿<div class="col-md-8 col-md-offset-2 jumbotron text-center">
     <div filter-panel></div>
 
-    <div ng-repeat="article in vm.articles">
-        <div class="row">
-            <div class="col-md-2 center">
+    <div class="row" ng-repeat="article in vm.articles">
+        <div class="col-md-2 center">
+            <div class="row">
                 <div class="row">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-4">
-                            <br />
-                            <br />
-                            <img ng-src="{{article.Author.ProfileImage || vm.DefaultProfile}}" width="150" height="150" />
-                        </div>
+                    <div class="col-md-8 col-md-offset-4">
+                        <br />
+                        <br />
+                        <img ng-src="{{article.Author.ProfileImage || vm.DefaultProfile}}" width="150" height="150" />
                     </div>
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-4">
-                            <h5>{{article.Author.UserName}}</h5>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-4">
+                        <h5>{{article.Author.UserName}}</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 col-md-offset-1">
-                <div class="row">
-                    <h2 class="word-break">{{article.Title}}</h2>
+        </div>
+        <div class="col-md-8 col-md-offset-1">
+            <div class="row">
+                <h2 class="word-break">{{article.Title}}</h2>
+            </div>
+            <div class="row text-left">
+                <p class="word-break"><small>{{article.Description}}</small></p>
+            </div>
+            <div class="row">
+                <div class="pull-left">
+                    <div class="text-left">Rating: {{article.Rating | roundToDecimal: 2}}</div>
+                    <div>Publish date: {{article.DatePublished | dateFormat}}</div>
+                    <div>Category: {{article.Category.Name}}</div>
                 </div>
-                <div class="row text-left">
-                    <p class="word-break"><small>{{article.Description}}</small></p>
-                </div>
-                <div class="row">
-                    <div class="pull-left">
-                        <div class="text-left">Rating: {{article.Rating | roundToDecimal: 2}}</div>
-                        <div>Publish date: {{article.DatePublished | dateFormat}}</div>
-                        <div>Category: {{article.Category.Name}}</div>
-                    </div>
-                    <div class="pull-right">
-                        <div ng-if="vm.isAuthenticated" class="row">
-                            <div class="col-md-4 form-group form-group-sm">
-                                <button class="btn btn-md btn-success" ng-click="vm.rateArticle($index, rating)">Rate</button>
-                            </div>
-                            <div class="col-md-8">
-                                <select class="form-control" ng-model="rating">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
+                <div class="pull-right">
+                    <div ng-if="vm.isAuthenticated" class="row">
+                        <div class="col-md-4 form-group form-group-sm">
+                            <button class="btn btn-md btn-success" ng-click="vm.rateArticle($index, rating)">Rate</button>
+                        </div>
+                        <div class="col-md-8">
+                            <select class="form-control" ng-model="rating">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
                         </div>
                     </div>
                 </div>
