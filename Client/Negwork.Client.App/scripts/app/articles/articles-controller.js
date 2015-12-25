@@ -1,14 +1,20 @@
 ﻿(function () {
     'use strict';
 
-    var articlesController = function articlesController(auth, notifier, articles) {
+    var articlesController = function articlesController($routeParams, auth, notifier, articles) {
         var vm = this;
+        vm.request = {};
+
+        if ($routeParams.category !== undefined) {
+            vm.request.category = $routeParams.category;
+        }
+
         vm.currentPage = 1;
         vm.DefaultProfile = 'https://diasp.eu/assets/user/default.png';
 
         vm.pages = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-        articles.search()
+        articles.search(vm.request)
             .then(function (response) {
                 vm.articles = response;
             }, function (err) {
@@ -36,7 +42,6 @@
         };
 
         vm.search = function () {
-            vm.request = vm.request || {};
             vm.request.page = vm.currentPage;
 
             articles.search(vm.request)
@@ -66,5 +71,5 @@
 
     angular
         .module('negwork.controllers')
-        .controller('ArticlesController', ['auth', 'notifier', 'articles', articlesController])
+        .controller('ArticlesController', ['$routeParams', 'auth', 'notifier', 'articles', articlesController])
 }());
