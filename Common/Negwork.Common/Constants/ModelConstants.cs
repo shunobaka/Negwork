@@ -23,5 +23,7 @@
 
         public const int MAX_IMAGE_TITLE_LENGTH = 100;
         public const int MIN_IMAGE_TITLE_LENGHT = 5;
+
+        public const int MIN_IMAGE_DESCRIPTION_LENGTH = 10;
     }
 }
