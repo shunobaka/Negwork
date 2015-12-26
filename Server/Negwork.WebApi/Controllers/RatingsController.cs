@@ -2,7 +2,7 @@
 {
     using Microsoft.AspNet.Identity;
     using Models.RatingModels;
-    using Services.Data;
+    using Services.Common;
     using Services.Data.Contracts;
     using System.Web.Http;
 
