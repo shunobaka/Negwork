@@ -20,6 +20,7 @@ using Negwork.Data.Models;
 using Negwork.Data;
 using System.Linq;
 using System.Data.Entity;
+using AutoMapper.QueryableExtensions;
 
 namespace Negwork.WebApi.Controllers
 {
@@ -362,12 +363,9 @@ namespace Negwork.WebApi.Controllers
 
             var db = new NegworkDbContext();
 
-            var user = await db.Users.Where(u => u.Id == userId)
-                .Select(u => new
-                {
-                    u.UserName,
-                    u.Email
-                })
+            var user = await db.Users
+                .Where(u => u.Id == userId)
+                .ProjectTo<UserIdentityResponseModel>()
                 .FirstOrDefaultAsync();
 
             if (user == null)

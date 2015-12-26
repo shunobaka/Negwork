@@ -15,5 +15,7 @@
         public DateTime? DateOfBirth { get; set; }
 
         public string ProfileImage { get; set; }
+
+        public string AdditionalInfo { get; set; }
     }
 }
