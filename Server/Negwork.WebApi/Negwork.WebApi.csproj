@@ -233,12 +233,14 @@
     </Compile>
     <Compile Include="Infrastructure\Mappings\IHaveCustomMappings.cs" />
     <Compile Include="Infrastructure\Mappings\IMapFrom.cs" />
-    <Compile Include="Models\CategoryModels\CategoryCreationModel.cs" />
+    <Compile Include="Models\CategoryModels\CategoryCreationRequestModel.cs" />
     <Compile Include="Models\CategoryModels\CategoryResponseModel.cs" />
-    <Compile Include="Models\RatingModels\RatingCreationModel.cs" />
+    <Compile Include="Models\ImageModels\ImageCreationRequestModel.cs" />
+    <Compile Include="Models\ImageModels\ImageResponseModel.cs" />
+    <Compile Include="Models\RatingModels\RatingCreationRequestModel.cs" />
     <Compile Include="Models\UserModels\AccountBindingModels.cs" />
     <Compile Include="Models\UserModels\AccountViewModels.cs" />
-    <Compile Include="Models\ArticleModels\ArticleCreationModel.cs" />
+    <Compile Include="Models\ArticleModels\ArticleCreationRequestModel.cs" />
     <Compile Include="Models\ArticleModels\ArticleResponseModel.cs" />
     <Compile Include="Models\UserModels\UserIdentityResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

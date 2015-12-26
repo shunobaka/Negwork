@@ -16,7 +16,7 @@
         }
 
         [Authorize]
-        public IHttpActionResult Post(RatingCreationModel model)
+        public IHttpActionResult Post(RatingCreationRequestModel model)
         {
             if (!this.ModelState.IsValid)
             {

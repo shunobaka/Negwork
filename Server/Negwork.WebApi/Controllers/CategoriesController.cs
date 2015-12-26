@@ -41,7 +41,7 @@
             return this.Ok(result);
         }
 
-        public IHttpActionResult Post(CategoryCreationModel model)
+        public IHttpActionResult Post(CategoryCreationRequestModel model)
         {
             if (!this.ModelState.IsValid)
             {
