@@ -1,7 +1,7 @@
 ﻿namespace Negwork.Data.Models
 {
-    using Common;
     using System.ComponentModel.DataAnnotations;
+    using Common;
 
     public class Vote
     {

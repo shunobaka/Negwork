@@ -1,14 +1,14 @@
 ﻿namespace Negwork.Data.Models
 {
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
-    using Common;
     using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Security.Claims;
     using System.Threading.Tasks;
-    using System.ComponentModel.DataAnnotations;
+    using Common;
     using Common.Constants;
-    using System.Collections.Generic;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
 
     public class User : IdentityUser
     {
@@ -24,7 +24,6 @@
             this.ratings = new HashSet<Rating>();
             this.votes = new HashSet<Vote>();
         }
-
 
         [Required]
         [MinLength(ModelConstants.MIN_USER_FIRSTNAME_LENGTH)]
@@ -53,6 +52,7 @@
             {
                 return this.articles;
             }
+
             set
             {
                 this.articles = value;
@@ -65,6 +65,7 @@
             {
                 return this.images;
             }
+
             set
             {
                 this.images = value;
@@ -77,6 +78,7 @@
             {
                 return this.votes;
             }
+
             set
             {
                 this.votes = value;
@@ -89,6 +91,7 @@
             {
                 return this.ratings;
             }
+
             set
             {
                 this.ratings = value;
@@ -97,9 +100,9 @@
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager, string authenticationType)
         {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            //// Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
-            // Add custom user claims here
+            //// Add custom user claims here
             return userIdentity;
         }
     }

@@ -1,8 +1,9 @@
 ﻿namespace Negwork.Services.Data
 {
-    using Negwork.Data.Models;
-    using Common;
     using System.Linq;
+
+    using Common;
+    using Negwork.Data.Models;
 
     public static class FilterExtensions
     {
@@ -35,7 +36,7 @@
                 if (filters.OrderBy == "userrating")
                 {
                     // TODO: Extend
-                    //query = query.OrderBy(a => (d))
+                    // query = query.OrderBy(a => (d))
                 }
 
                 if (filters.OrderBy == "title")
@@ -63,7 +64,7 @@
                 if (filters.OrderBy == "userrating")
                 {
                     // TODO: Extend
-                    //query = query.OrderBy(a => (d))
+                    // query = query.OrderBy(a => (d))
                 }
 
                 if (filters.OrderBy == "title")
@@ -134,7 +135,7 @@
                 if (filters.OrderBy == "userrating")
                 {
                     // TODO: Extend
-                    //query = query.OrderBy(a => (d))
+                    // query = query.OrderBy(a => (d))
                 }
 
                 if (filters.OrderBy == "title")
@@ -162,7 +163,7 @@
                 if (filters.OrderBy == "userrating")
                 {
                     // TODO: Extend
-                    //query = query.OrderBy(a => (d))
+                    // query = query.OrderBy(a => (d))
                 }
 
                 if (filters.OrderBy == "title")

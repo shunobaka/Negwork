@@ -2,16 +2,16 @@
 {
     using System;
     using System.Web;
+    using Common.Constants;
+    using Data;
+    using Data.Repositories;
     using Ninject;
     using Ninject.Extensions.Conventions;
     using Ninject.Web.Common;
-    using Data.Repositories;
-    using Common.Constants;
-    using Data;
 
     public static class NinjectConfig
     {
-        public static Action<IKernel> DependenciesRegistration = kernel =>
+        private static Action<IKernel> dependenciesRegistration = kernel =>
         {
             kernel.Bind<NegworkDbContext>().To<NegworkDbContext>();
             kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
@@ -37,7 +37,7 @@
 
         private static void RegisterServices(IKernel kernel)
         {
-            DependenciesRegistration(kernel);
+            dependenciesRegistration(kernel);
             
             kernel.Bind(b => b
                 .From(Assemblies.DataServices)

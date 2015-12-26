@@ -1,7 +1,7 @@
 ﻿namespace Negwork.WebApi.Models.ImageModels
 {
-    using Negwork.Common.Constants;
     using System.ComponentModel.DataAnnotations;
+    using Common.Constants;
 
     public class ImageCreationRequestModel
     {

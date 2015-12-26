@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Negwork.WebApi.Models
+﻿namespace Negwork.WebApi.Models
 {
-    // Models returned by AccountController actions.
+    using System;
+    using System.Collections.Generic;
 
+    // Models returned by AccountController actions.
     public class ExternalLoginViewModel
     {
         public string Name { get; set; }

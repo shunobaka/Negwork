@@ -1,11 +1,11 @@
 ﻿namespace Negwork.WebApi.Controllers
 {
-    using System.Web.Http;
-    using Services.Data.Contracts;
-    using Models.CategoryModels;
-    using AutoMapper.QueryableExtensions;
     using System.Linq;
+    using System.Web.Http;
     using AutoMapper;
+    using AutoMapper.QueryableExtensions;
+    using Models.CategoryModels;
+    using Services.Data.Contracts;
 
     [RoutePrefix("api/Categories")]
     public class CategoriesController : ApiController

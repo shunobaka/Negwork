@@ -2,10 +2,11 @@
 {
     using System;
     using System.Linq;
-    using Negwork.Data.Models;
-    using Contracts;
-    using Negwork.Data.Repositories;
+
     using Common;
+    using Contracts;
+    using Negwork.Data.Models;
+    using Negwork.Data.Repositories;
 
     public class ImagesService : IImagesService
     {
@@ -90,7 +91,7 @@
                 image.Score--;
             }
 
-            images.SaveChanges();
+            this.images.SaveChanges();
 
             return ServiceResponse.Ok;
         }

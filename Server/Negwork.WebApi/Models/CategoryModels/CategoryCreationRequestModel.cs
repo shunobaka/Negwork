@@ -1,7 +1,7 @@
 ﻿namespace Negwork.WebApi.Models.CategoryModels
 {
-    using Negwork.Common.Constants;
     using System.ComponentModel.DataAnnotations;
+    using Negwork.Common.Constants;
 
     public class CategoryCreationRequestModel
     {

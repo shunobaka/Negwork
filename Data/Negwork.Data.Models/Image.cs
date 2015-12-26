@@ -1,9 +1,9 @@
 ﻿namespace Negwork.Data.Models
 {
-    using Common.Constants;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using Common.Constants;
 
     public class Image
     {
@@ -47,6 +47,7 @@
             {
                 return this.votes;
             }
+
             set
             {
                 this.votes = value;

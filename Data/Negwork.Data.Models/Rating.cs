@@ -1,7 +1,7 @@
 ﻿namespace Negwork.Data.Models
 {
-    using Common.Constants;
     using System.ComponentModel.DataAnnotations;
+    using Common.Constants;
 
     public class Rating
     {

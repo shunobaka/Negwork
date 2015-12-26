@@ -1,9 +1,9 @@
 ﻿namespace Negwork.Data.Models
 {
-    using Common.Constants;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using Common.Constants;
 
     public class Article
     {
@@ -46,6 +46,7 @@
             {
                 return this.ratings;
             }
+
             set
             {
                 this.ratings = value;

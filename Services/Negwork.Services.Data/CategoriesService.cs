@@ -1,9 +1,9 @@
 ﻿namespace Negwork.Services.Data
 {
-    using System;
     using System.Linq;
-    using Negwork.Data.Models;
+
     using Contracts;
+    using Negwork.Data.Models;
     using Negwork.Data.Repositories;
 
     public class CategoriesService : ICategoriesService
@@ -59,8 +59,8 @@
                 Image = image
             };
 
-            categories.Add(category);
-            categories.SaveChanges();
+            this.categories.Add(category);
+            this.categories.SaveChanges();
 
             return category;
         }

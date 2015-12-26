@@ -1,9 +1,10 @@
 ﻿namespace Negwork.Services.Data.Contracts
 {
-    using Negwork.Data.Models;
-    using Common;
     using System;
     using System.Linq;
+
+    using Common;
+    using Negwork.Data.Models;
 
     public interface IImagesService
     {

@@ -1,11 +1,12 @@
 ﻿namespace Negwork.Services.Data
 {
-    using Negwork.Data.Models;
-    using Negwork.Data.Repositories;
-    using Contracts;
     using System;
     using System.Linq;
+
     using Common;
+    using Contracts;
+    using Negwork.Data.Models;
+    using Negwork.Data.Repositories;
 
     public class ArticlesService : IArticlesService
     {
@@ -57,7 +58,7 @@
                 return ServiceResponse.Duplicated;
             }
 
-            var article = articles
+            var article = this.articles
                 .All()
                 .Where(a => a.Id == id)
                 .FirstOrDefault();
@@ -81,7 +82,7 @@
             article.Ratings.Add(articleRating);
             article.AllRatings += rating;
             article.NumberOfRatings++;
-            articles.SaveChanges();
+            this.articles.SaveChanges();
 
             return ServiceResponse.Ok;
         }

@@ -1,15 +1,15 @@
 ﻿namespace Negwork.WebApi.Controllers
 {
+    using System;
+    using System.Linq;
+    using System.Web.Http;
+    using AutoMapper;
     using AutoMapper.QueryableExtensions;
     using Microsoft.AspNet.Identity;
     using Models.ArticleModels;
-    using Services.Data.Contracts;
-    using Services.Data;
-    using System.Linq;
-    using System.Web.Http;
-    using System;
     using Services.Common;
-    using AutoMapper;
+    using Services.Data;
+    using Services.Data.Contracts;
 
     [RoutePrefix("api/Articles")]
     public class ArticlesController : ApiController
@@ -61,7 +61,7 @@
                 DateTime.Now,
                 model.CategoryId);
 
-            //TODO: this.Created
+            // TODO: this.Created
             return this.Ok();
         }
     }

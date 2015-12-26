@@ -1,8 +1,8 @@
 ﻿namespace Negwork.WebApi.Models
 {
-    using Negwork.Data.Models;
-    using Negwork.WebApi.Infrastructure.Mappings;
     using System;
+    using Data.Models;
+    using Infrastructure.Mappings;
 
     public class UserIdentityResponseModel : IMapFrom<User>
     {

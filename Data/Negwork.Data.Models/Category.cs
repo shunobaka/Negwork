@@ -1,9 +1,9 @@
 ﻿namespace Negwork.Data.Models
 {
-    using Common.Constants;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using Common.Constants;
 
     public class Category
     {
@@ -35,6 +35,7 @@
             {
                 return this.articles;
             }
+
             set
             {
                 this.articles = value;
@@ -47,6 +48,7 @@
             {
                 return this.images;
             }
+
             set
             {
                 this.images = value;

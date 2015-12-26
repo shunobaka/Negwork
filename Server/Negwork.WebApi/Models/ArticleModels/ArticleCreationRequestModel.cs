@@ -1,13 +1,11 @@
 ﻿namespace Negwork.WebApi.Models.ArticleModels
 {
-    using Common.Constants;
     using System;
     using System.ComponentModel.DataAnnotations;
+    using Common.Constants;
 
     public class ArticleCreationRequestModel
     {
-        private static string TITLE_TOO_SHORT_ERROR = string.Format("Title should be at least {0} characters long!", ModelConstants.MIN_ARTICLE_TITLE_LENGHT);
-
         [Required]
         [MinLength(ModelConstants.MIN_ARTICLE_TITLE_LENGHT, 
             ErrorMessage = ErrorMessages.ARTICLE_TITLE_TOO_SHORT)]

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Web.Http;
 using Microsoft.Owin;
-using Owin;
-using System.Web.Http;
+using Microsoft.Owin.Cors;
+using Negwork.Common.Constants;
 using Ninject.Web.Common.OwinHost;
 using Ninject.Web.WebApi.OwinHost;
-using Negwork.Common.Constants;
-using Microsoft.Owin.Cors;
+using Owin;
 
 [assembly: OwinStartup(typeof(Negwork.WebApi.Startup))]
 

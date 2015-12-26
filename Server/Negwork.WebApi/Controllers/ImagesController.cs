@@ -1,14 +1,14 @@
 ﻿namespace Negwork.WebApi.Controllers
 {
+    using System;
+    using System.Linq;
+    using System.Web.Http;
     using AutoMapper;
     using AutoMapper.QueryableExtensions;
     using Microsoft.AspNet.Identity;
     using Models.ImageModels;
     using Services.Common;
     using Services.Data;
-    using System;
-    using System.Linq;
-    using System.Web.Http;
 
     public class ImagesController : ApiController
     {
@@ -59,7 +59,7 @@
                 DateTime.Now,
                 model.CategoryId);
 
-            //TODO: this.Created
+            // TODO: this.Created
             return this.Ok();
         }
     }

@@ -1,9 +1,9 @@
 ﻿namespace Negwork.Services.Data
 {
-    using System;
     using System.Linq;
+
+    using Contracts;
     using Negwork.Data.Models;
-    using Negwork.Services.Data.Contracts;
     using Negwork.Data.Repositories;
 
     public class UsersService : IUsersService

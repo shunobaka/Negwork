@@ -1,9 +1,9 @@
 ﻿namespace Negwork.WebApi.Models.ImageModels
 {
-    using CategoryModels;
-    using Infrastructure.Mappings;
-    using Data.Models;
     using System;
+    using CategoryModels;
+    using Data.Models;
+    using Infrastructure.Mappings;
 
     public class ImageResponseModel : IMapFrom<Image>
     {
