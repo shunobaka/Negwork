@@ -1,4 +1,4 @@
-﻿namespace Negwork.Services.Data
+﻿namespace Negwork.Services.Common
 {
     public enum ServiceResponse
     {
