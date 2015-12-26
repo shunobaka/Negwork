@@ -13,6 +13,8 @@
             if (form.$valid) {
                 article.datePublished = new Date();
 
+                article.description = article.description.replace(/\r?\n/g, '<br />'); // Display new line in text
+
                 articles
                     .add(article)
                     .then(function (response) {
@@ -20,10 +22,8 @@
                         $location.path('/articles');
                     }, function (err) {
                         var errors = err.data.ModelState;
-                        debugger;
                         for (var errorCategory in errors) {
                             var innerErrors = errors[errorCategory];
-
                             for (var innerErrorIndex in innerErrors) {
                                 notifier.error(innerErrors[innerErrorIndex]);
                             }

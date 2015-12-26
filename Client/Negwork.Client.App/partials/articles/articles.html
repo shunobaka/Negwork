@@ -27,7 +27,7 @@
                 <h2 class="word-break">{{article.Title}}</h2>
             </div>
             <div class="row text-left">
-                <p class="word-break"><small>{{article.Description}}</small></p>
+                <p class="word-break"><small><span ng-bind-html="article.Description"></span></small></p>
             </div>
             <div class="row">
                 <div class="text-left pull-left">
