@@ -15,5 +15,6 @@
         public const string IMAGE_TITLE_TOO_LONG = "IMAGE title must be 100 characters long at max!";
 
         public const string IMAGE_DESCRIPTION_TOO_SHORT = "Image description must be at least 100 sybmols long!";
+        public const string IMAGE_URL_INVALID = "The image must be a valid url.";
     }
 }
