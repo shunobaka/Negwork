@@ -2,7 +2,7 @@
 
 namespace Negwork.WebApi.Models.RatingModels
 {
-    public class RatingCreationModel
+    public class RatingCreationRequestModel
     {
         [Required]
         public int ArticleId { get; set; }

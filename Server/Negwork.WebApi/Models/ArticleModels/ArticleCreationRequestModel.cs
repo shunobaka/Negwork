@@ -4,7 +4,7 @@
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class ArticleCreationModel
+    public class ArticleCreationRequestModel
     {
         private static string TITLE_TOO_SHORT_ERROR = string.Format("Title should be at least {0} characters long!", ModelConstants.MIN_ARTICLE_TITLE_LENGHT);
 

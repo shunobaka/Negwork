@@ -3,7 +3,7 @@
     using Negwork.Common.Constants;
     using System.ComponentModel.DataAnnotations;
 
-    public class CategoryCreationModel
+    public class CategoryCreationRequestModel
     {
         [Required]
         [MinLength(ModelConstants.MIN_ARTICLE_CATEGORY_LENGHT,
