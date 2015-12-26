@@ -1,8 +1,14 @@
-﻿namespace Negwork.Services.Common
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Negwork.Services.Common
 {
-    public class ArticleFilterModel
+    public class FilterModel
     {
-        public ArticleFilterModel()
+        public FilterModel()
         {
             this.Page = 1;
             this.OrderBy = "date";
