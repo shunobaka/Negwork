@@ -9,7 +9,7 @@
         public int Id { get; set; }
 
         [Required]
-        public Vote Value { get; set; }
+        public VoteType Value { get; set; }
 
         public string UserId { get; set; }
 

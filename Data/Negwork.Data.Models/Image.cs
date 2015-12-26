@@ -1,6 +1,7 @@
 ﻿namespace Negwork.Data.Models
 {
     using Common.Constants;
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
@@ -24,6 +25,17 @@
         [MinLength(ModelConstants.MIN_IMAGE_TITLE_LENGHT)]
         [MaxLength(ModelConstants.MAX_IMAGE_TITLE_LENGTH)]
         public string Title { get; set; }
+
+        [MinLength(ModelConstants.MIN_IMAGE_DESCRIPTION_LENGTH)]
+        public string Description { get; set; }
+
+        public DateTime? DatePublished { get; set; }
+
+        public int Score { get; set; }
+
+        public int CategoryId { get; set; }
+
+        public Category Category { get; set; }
 
         public string OwnerId { get; set; }
         
