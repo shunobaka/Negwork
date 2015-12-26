@@ -9,6 +9,7 @@
     using System.Web.Http;
     using System;
     using Services.Common;
+    using AutoMapper;
 
     [RoutePrefix("api/Articles")]
     public class ArticlesController : ApiController
@@ -20,7 +21,7 @@
             this.data = data;
         }
         
-        public IHttpActionResult Get([FromUri]ArticleFilterModel model)
+        public IHttpActionResult Get([FromUri]FilterModel model)
         {
             var articles = this.data
                 .GetAll()
@@ -40,19 +41,13 @@
                 return this.NotFound();
             }
 
-            var result = new ArticleResponseModel()
-            {
-                Id = article.Id,
-                DatePublished = article.DatePublished,
-                Description = article.Description,
-                Title = article.Title
-            };
+            var result = Mapper.Map<ArticleResponseModel>(article);
 
             return this.Ok(result);
         }
 
         [Authorize]
-        public IHttpActionResult Post(ArticleCreationModel model)
+        public IHttpActionResult Post(ArticleCreationRequestModel model)
         {
             if (!this.ModelState.IsValid)
             {
