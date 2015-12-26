@@ -5,6 +5,7 @@
     using Contracts;
     using System;
     using System.Linq;
+    using Common;
 
     public class ArticlesService : IArticlesService
     {
