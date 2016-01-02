@@ -98,6 +98,7 @@
     <Content Include="scripts\app\categories\add-category-controller.js" />
     <Content Include="scripts\app\categories\categories-articles-controller.js" />
     <Content Include="scripts\app\categories\categories-service.js" />
+    <Content Include="scripts\app\comments\comments-service.js" />
     <Content Include="scripts\app\common\data.js" />
     <Content Include="scripts\app\common\date-filter.js" />
     <Content Include="scripts\app\common\datepicker-directive.js" />
