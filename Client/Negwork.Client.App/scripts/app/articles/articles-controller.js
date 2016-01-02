@@ -36,7 +36,7 @@
 
                     var errorMsg = err.data.Message;
                     notifier.error(errorMsg);
-                })
+                });
         };
 
         vm.search = function () {

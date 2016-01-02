@@ -5,6 +5,10 @@
         return function (number, place) {
             place = place || 2;
 
+            if (number == undefined) {
+                return;
+            }
+
             return number.toFixed(place);
         };
     };
