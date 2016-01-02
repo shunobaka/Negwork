@@ -87,6 +87,7 @@
     <Content Include="partials\home\home.html" />
     <Content Include="partials\identity\login.html" />
     <Content Include="partials\identity\register.html" />
+    <Content Include="partials\users\user-profile.html" />
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\articles\add-article-controller.js" />
     <Content Include="scripts\app\articles\articles-controller.js" />
@@ -107,6 +108,8 @@
     <Content Include="scripts\app\identity\identity-service.js" />
     <Content Include="scripts\app\identity\login-controller.js" />
     <Content Include="scripts\app\identity\register-controller.js" />
+    <Content Include="scripts\app\users\user-profile-controller.js" />
+    <Content Include="scripts\app\users\users-service.js" />
     <Content Include="styles\animation.css" />
     <Content Include="styles\main.css" />
     <Content Include="Web.config" />

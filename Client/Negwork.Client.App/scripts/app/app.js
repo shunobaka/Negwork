@@ -47,6 +47,11 @@
                 controller: 'LoginController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
+            .when('/user/:username', {
+                templateUrl: 'partials/users/user-profile.html',
+                controller: 'UserProfileController',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
             .when('/register', {
                 templateUrl: 'partials/identity/register.html',
                 controller: 'RegisterController',
