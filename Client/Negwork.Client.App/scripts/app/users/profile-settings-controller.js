@@ -8,6 +8,7 @@
         auth.getIdentity()
             .then(function (user) {
                 vm.currentUser = user;
+                vm.currentProfileImage = vm.currentUser.ProfileImage;
             }, function () {
                 notifier.error('There was a problem editing your profile. Please try again.');
             });
@@ -17,9 +18,19 @@
 
             users.updateUserInfo(vm.currentUser)
                 .then(function () {
+                    vm.currentProfileImage = vm.currentUser.ProfileImage;
                     notifier.success('Profile was updated successfully!');
                 }, function (err) {
-                    notifier.error(err);
+                    var error = err.data;
+                    console.log(error);
+                    if (error.ModelState !== undefined) {
+                        var modelState = error.ModelState;
+                        for (var prop in modelState) {
+                            for (var errIndex in modelState[prop]) {
+                                notifier.error(modelState[prop][errIndex]);
+                            }
+                        }
+                    }
                 });
         };
     }
