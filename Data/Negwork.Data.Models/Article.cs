@@ -8,9 +8,11 @@
     public class Article
     {
         private ICollection<Rating> ratings;
+        private ICollection<Comment> comments;
 
         public Article()
         {
+            this.comments = new HashSet<Comment>();
             this.ratings = new HashSet<Rating>();
         }
 
@@ -50,6 +52,19 @@
             set
             {
                 this.ratings = value;
+            }
+        }
+
+        public virtual ICollection<Comment> Comments
+        {
+            get
+            {
+                return this.comments;
+            }
+
+            set
+            {
+                this.comments = value;
             }
         }
     }
