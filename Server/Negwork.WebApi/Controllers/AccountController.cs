@@ -26,7 +26,7 @@
     using AutoMapper;
     using System.Web.Http.Cors;
     using Models.UserModels;
-
+    using Services.Common;
     [Authorize]
     [RoutePrefix("api/Users")]
     public class AccountController : ApiController
@@ -419,6 +419,40 @@
             var userInfo = Mapper.Map<UserInfoResponseModel>(user);
 
             return this.Ok(userInfo);
+        }
+
+        [HttpPut]
+        [Authorize]
+        [Route("Settings")]
+        public IHttpActionResult UpdateUser(UserUpdateRequestModel model)
+        {
+            if (model == null)
+            {
+                return this.BadRequest("There was a problem.");
+            }
+
+            var userName = this.User.Identity.GetUserName();
+
+            if (userName != model.UserName)
+            {
+                return this.BadRequest("You are not authorized to edit this profile.");
+            }
+
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+
+            var userId = this.User.Identity.GetUserId();
+
+            var result = this.data.UpdateInfo(userId, model.FirstName, model.LastName, model.AdditionalInfo, model.ProfileImage);
+
+            if (result == ServiceResponse.NotFound)
+            {
+                return this.InternalServerError();
+            }
+
+            return this.Ok();
         }
 
         // POST api/Account/RegisterExternal
