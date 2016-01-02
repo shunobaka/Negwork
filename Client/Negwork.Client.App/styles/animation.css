@@ -23,9 +23,9 @@
     left: 100%;
 }
 
-    .view-animate.ng-enter.ng-enter-active {
-        left: 0;
-    }
+.view-animate.ng-enter.ng-enter-active {
+    left: 0;
+}
 
 .view-animate.ng-leave.ng-leave-active {
     left: -100%;
