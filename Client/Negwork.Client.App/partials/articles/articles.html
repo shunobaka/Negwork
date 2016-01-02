@@ -1,4 +1,4 @@
-﻿<div class="col-md-8 col-md-offset-2 jumbotron text-center">
+﻿<div class="col-md-8 col-md-offset-2 text-center jumbotron">
     <div ng-if="vm.isAuthenticated" filter-panel></div>
 
     <div ng-if="!vm.isAuthenticated">
@@ -14,6 +14,10 @@
                 <img class="profile-image" ng-src="{{article.Author.ProfileImage || vm.DefaultProfile}}" width="100%" height="100%" />
             </div>
             <a href="/user/{{article.Author.UserName}}" class="text-center">{{article.Author.UserName}}</a>
+            <div class="row">
+                <br />
+                <a href="/article/{{article.Id}}" class="btn btn-primary">Article details</a>
+            </div>
         </div>
         <div class="col-md-9">
             <div class="row">
@@ -29,19 +33,21 @@
                     <div>Publish date: {{article.DatePublished | dateFormat}}</div>
                 </div>
                 <div class="pull-right">
-                    <br />
                     <div ng-if="vm.isAuthenticated" class="row">
-                        <div class="col-md-4 form-group form-group-sm">
-                            <button class="btn btn-md btn-success" ng-click="vm.rateArticle($index, rating)">Rate</button>
-                        </div>
-                        <div class="col-md-8">
-                            <select class="form-control" ng-model="rating">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
+                        <div class="row">
+                            <br />
+                            <div class="col-md-4">
+                                <button class="btn btn-md btn-success" ng-click="vm.rateArticle($index, rating)">Rate</button>
+                            </div>
+                            <div class="col-md-8">
+                                <select class="form-control" ng-model="rating">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
