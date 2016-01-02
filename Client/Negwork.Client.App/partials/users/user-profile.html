@@ -1,0 +1,20 @@
+﻿<div class="col-md-8 col-md-offset-2 view-container">
+    <h1 class="text-center jumbotron">Profile of {{vm.user.UserName}}</h1>
+    <div class="row">
+        <div class="col-md-4 profile-image-container">
+            <img ng-src="{{vm.user.ProfileImage || vm.DefaultProfile}}" class="profile-image" alt="userImage" width="100%" />
+        </div>
+        <div class="col-md-4">
+            <h3 class="text-center jumbotron">General info</h3>
+            <h4><b>First name:</b> {{vm.user.FirstName}}</h4>
+            <h4><b>Last name:</b> {{vm.user.LastName}}</h4>
+            <h4><b>Date of birth:</b> {{vm.user.DateOfBirth | dateFormat}}</h4>
+            <h4><b>Number of articles:</b> {{vm.user.Articles.length}}</h4>
+            <h4><b>Number of pictures:</b> {{vm.user.Images.length}}</h4>
+        </div>
+        <div class="col-md-4">
+            <h3 class="text-center jumbotron">Additional info</h3>
+            <h4><b>Info:</b> {{vm.user.AdditionalInfo}}</h4>
+        </div>
+    </div>
+</div>
