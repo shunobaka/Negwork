@@ -41,7 +41,7 @@
                 return this.NotFound();
             }
 
-            var result = Mapper.Map<ArticleResponseModel>(article);
+            var result = Mapper.Map<ArticleDetailsResponseModel>(article);
 
             return this.Ok(result);
         }

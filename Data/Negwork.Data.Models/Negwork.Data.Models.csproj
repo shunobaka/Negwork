@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Article.cs" />
+    <Compile Include="Comment.cs" />
     <Compile Include="VoteType.cs" />
     <Compile Include="Rating.cs" />
     <Compile Include="Category.cs" />
