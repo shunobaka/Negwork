@@ -226,6 +226,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\RatingsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -233,8 +234,11 @@
     </Compile>
     <Compile Include="Infrastructure\Mappings\IHaveCustomMappings.cs" />
     <Compile Include="Infrastructure\Mappings\IMapFrom.cs" />
+    <Compile Include="Models\ArticleModels\ArticleDetailsResponseModel.cs" />
     <Compile Include="Models\CategoryModels\CategoryCreationRequestModel.cs" />
     <Compile Include="Models\CategoryModels\CategoryResponseModel.cs" />
+    <Compile Include="Models\CommentModels\CommentCreationRequestModel.cs" />
+    <Compile Include="Models\CommentModels\CommentResponseModel.cs" />
     <Compile Include="Models\ImageModels\ImageCreationRequestModel.cs" />
     <Compile Include="Models\ImageModels\ImageResponseModel.cs" />
     <Compile Include="Models\RatingModels\RatingCreationRequestModel.cs" />
