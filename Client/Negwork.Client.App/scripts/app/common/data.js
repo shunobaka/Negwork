@@ -19,6 +19,20 @@
             return defered.promise;
         }
 
+        function put(url, data) {
+            var defered = $q.defer();
+
+            $http
+                .put(apiUrl + url, data)
+                .then(function (response) {
+                    defered.resolve(response.data);
+                }, function (err) {
+                    defered.reject(err);
+                });
+
+            return defered.promise;
+        }
+
         function post(url, data) {
             var defered = $q.defer();
 
@@ -35,8 +49,9 @@
 
         return {
             get: get,
-            post: post
-        }
+            post: post,
+            put: put
+        };
     }
 
 
