@@ -1,5 +1,6 @@
 ﻿namespace Negwork.Services.Data
 {
+    using System;
     using System.Linq;
 
     using Contracts;
@@ -25,6 +26,14 @@
             return this.users
                 .All()
                 .Where(u => u.Id == id)
+                .FirstOrDefault();
+        }
+
+        public User GetByName(string name)
+        {
+            return this.users
+                .All()
+                .Where(u => u.UserName == name)
                 .FirstOrDefault();
         }
     }

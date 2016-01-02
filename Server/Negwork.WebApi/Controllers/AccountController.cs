@@ -22,6 +22,10 @@
     using Models;
     using Providers;
     using Results;
+    using Services.Data.Contracts;
+    using AutoMapper;
+    using System.Web.Http.Cors;
+    using Models.UserModels;
 
     [Authorize]
     [RoutePrefix("api/Users")]
@@ -29,9 +33,11 @@
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
+        private IUsersService data;
 
-        public AccountController()
+        public AccountController(IUsersService data)
         {
+            this.data = data;
         }
 
         public AccountController(
@@ -369,23 +375,50 @@
         [HttpGet]
         [Authorize]
         [Route("Identity")]
-        public async Task<IHttpActionResult> Identity()
+        public IHttpActionResult Identity()
         {
             var userId = this.User.Identity.GetUserId();
 
-            var db = new NegworkDbContext();
+            //var db = new NegworkDbContext();
 
-            var user = await db.Users
-                .Where(u => u.Id == userId)
-                .ProjectTo<UserIdentityResponseModel>()
-                .FirstOrDefaultAsync();
+            //var user = await db.Users
+            //    .Where(u => u.Id == userId)
+            //    .ProjectTo<UserIdentityResponseModel>()
+            //    .FirstOrDefaultAsync();
+
+            //if (user == null)
+            //{
+            //    return this.InternalServerError();
+            //}
+
+            //return this.Json(user);
+            var user = data.GetById(userId);
 
             if (user == null)
             {
                 return this.InternalServerError();
             }
 
-            return this.Json(user);
+            var userInfo = Mapper.Map<UserIdentityResponseModel>(user);
+
+            return this.Json(userInfo);
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("Profile/{username}")]
+        public IHttpActionResult GetUserProfile(string username)
+        {
+            var user = data.GetByName(username);
+
+            if (user == null)
+            {
+                return this.BadRequest("There is no such user.");
+            }
+
+            var userInfo = Mapper.Map<UserInfoResponseModel>(user);
+
+            return this.Ok(userInfo);
         }
 
         // POST api/Account/RegisterExternal
