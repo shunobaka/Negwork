@@ -16,5 +16,13 @@
 
         public const string IMAGE_DESCRIPTION_TOO_SHORT = "Image description must be at least 100 sybmols long!";
         public const string IMAGE_URL_INVALID = "The image must be a valid url.";
+
+        public const string USER_FIRSTNAME_TOO_SHORT = "The first name must be at least 2 characters long!";
+        public const string USER_LASTNAME_TOO_SHORT = "The last name must be at least 2 characters long!";
+        public const string USER_FIRSTNAME_TOO_LONG = "The first name must be 20 characters long at max!";
+        public const string USER_LASTNAME_TOO_LONG = "The last name must be 20 characters long at max!";
+        public const string USER_ADD_INFO_TOO_LONG = "The additional info must be shorter than 5000 characters!";
+
+        public const string USER_IMAGE_URL_INVALID = "The profile image must be a valid url.";
     }
 }
