@@ -17,10 +17,15 @@
             return data.post(RATINGS_API_URL, rating);
         }
 
+        function getById(id) {
+            return data.get(ARTICLES_API_URL + '/' + id);
+        }
+
         return {
             add: add,
             search: search,
-            rate: rate
+            rate: rate,
+            getById: getById
         };
     };
 

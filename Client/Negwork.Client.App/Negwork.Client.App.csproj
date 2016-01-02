@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <Content Include="partials\articles\article-details.html" />
     <Content Include="partials\articles\articles.html" />
     <Content Include="partials\articles\create-article.html" />
     <Content Include="partials\categories\categories.html" />
@@ -91,6 +92,7 @@
     <Content Include="partials\users\user-profile.html" />
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\articles\add-article-controller.js" />
+    <Content Include="scripts\app\articles\article-details-controller.js" />
     <Content Include="scripts\app\articles\articles-controller.js" />
     <Content Include="scripts\app\articles\articles-service.js" />
     <Content Include="scripts\app\categories\add-category-controller.js" />
