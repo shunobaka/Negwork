@@ -1,5 +1,5 @@
 ﻿<div class="col-md-8 col-md-offset-2 view-container text-center">
-    <h3 class="jumbotron text-center">Article details</h3>
+    <h2 class="jumbotron text-center">Article details</h2>
     <div class="row">
         <div class="col-md-3">
             <div class="profile-image-container">
@@ -9,7 +9,7 @@
         </div>
         <div class="col-md-9">
             <div class="row">
-                <h2 class="word-break jumbotron">{{vm.article.Title}}</h2>
+                <h3 class="word-break jumbotron">{{vm.article.Title}}</h3>
             </div>
             <div class="row text-left">
                 <p class="word-break"><small><span ng-bind-html="vm.article.Description"></span></small></p>
@@ -62,7 +62,7 @@
                         <div>
                             <h6>- {{comment.User.UserName}} - {{comment.CreationDate | dateFormat}}</h6>
                         </div>
-                        <h4>{{comment.Content}}</h4>
+                        <h5>{{comment.Content}}</h5>
                     </div>
                 </div>
             </div>
