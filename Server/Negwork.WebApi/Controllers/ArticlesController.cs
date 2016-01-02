@@ -34,16 +34,17 @@
 
         public IHttpActionResult Get(int id)
         {
-            var article = this.data.GetById(id);
+            var article = this.data
+                .GetById(id)
+                .ProjectTo<ArticleDetailsResponseModel>()
+                .FirstOrDefault();
 
             if (article == null)
             {
                 return this.NotFound();
             }
 
-            var result = Mapper.Map<ArticleDetailsResponseModel>(article);
-
-            return this.Ok(result);
+            return this.Ok(article);
         }
 
         [Authorize]
