@@ -49,9 +49,7 @@
         <div class="col-md-4 col-md-offset-4">
             <ul class="pagination">
                 <li><a href="#" ng-click="vm.goToPreviousPage()">«</a></li>
-                <li ng-repeat="page in vm.pages" ng-class="page == vm.currentPage ? 'active' : ''">
-                    <a href="#" value="{{page}}" ng-model="vm.currentPage" ng-click="vm.search()">{{page}}</a>
-                </li>
+                <li class="active"><a href="#">Page: {{vm.currentPage}}</a></li>
                 <li><a href="#" ng-click="vm.goToNextPage()">»</a></li>
             </ul>
         </div>

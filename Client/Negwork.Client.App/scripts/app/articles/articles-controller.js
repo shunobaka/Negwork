@@ -12,8 +12,6 @@
         vm.currentPage = 1;
         vm.DefaultProfile = 'https://diasp.eu/assets/user/default.png';
 
-        vm.pages = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
         articles.search(vm.request)
             .then(function (response) {
                 vm.articles = response;
@@ -53,7 +51,7 @@
         };
 
         vm.goToNextPage = function () {
-            if (vm.currentPage < vm.pages.length) {
+            if (vm.articles.length == (vm.request.pageSize || 10)) {
                 vm.currentPage++;
             }
 
