@@ -26,7 +26,24 @@
                 }, function (err) {
                     notifier.error('smth wrng hppnd lel.');
                 });
-        }
+        };
+
+        vm.rateArticle = function (rating) {
+            var data = { ArticleId: articleId, Rating: rating };
+
+            articles.rate(data)
+                .then(function () {
+                    notifier.success('Article was successfully rated!');
+                }, function (err) {
+                    if (!rating) {
+                        notifier.error('No rating selected!');
+                        return;
+                    }
+
+                    var errorMsg = err.data.Message;
+                    notifier.error(errorMsg);
+                });
+        };
     };
 
     angular
