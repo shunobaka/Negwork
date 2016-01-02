@@ -1,6 +1,7 @@
 ﻿namespace Negwork.Data.Models
 {
     using Common.Constants;
+    using System;
     using System.ComponentModel.DataAnnotations;
 
     public class Comment
@@ -12,6 +13,8 @@
         [MinLength(ModelConstants.MIN_COMMENT_CONTENT_LENGTH)]
         [MaxLength(ModelConstants.MAX_COMMENT_CONTENT_LENGTH)]
         public string Content { get; set; }
+
+        public DateTime? CreationDate { get; set; }
 
         public int ArticleId { get; set; }
 

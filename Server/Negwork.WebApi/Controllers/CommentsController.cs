@@ -3,6 +3,7 @@
     using Microsoft.AspNet.Identity;
     using Models.CommentModels;
     using Services.Data.Contracts;
+    using System;
     using System.Web.Http;
 
     public class CommentsController : ApiController
@@ -25,7 +26,8 @@
             var created = this.data.CreateComment(
                 this.User.Identity.GetUserId(),
                 model.Content,
-                model.ArticleId);
+                model.ArticleId,
+                DateTime.Now);
 
             return this.Ok(created);
         }
