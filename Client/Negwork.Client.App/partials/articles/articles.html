@@ -6,23 +6,16 @@
     </div>
 
     <div class="row" ng-repeat="article in vm.articles">
-        <div class="col-md-2 center">
-            <div class="row">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-4">
-                        <br />
-                        <br />
-                        <img ng-src="{{article.Author.ProfileImage || vm.DefaultProfile}}" width="150" height="150" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-4">
-                        <h5>{{article.Author.UserName}}</h5>
-                    </div>
-                </div>
+        <div class="col-md-3">
+            <br />
+            <br />
+            <br />
+            <div class="profile-image-container">
+                <img class="profile-image" ng-src="{{article.Author.ProfileImage || vm.DefaultProfile}}" width="100%" height="100%" />
             </div>
+            <a href="/user/{{article.Author.UserName}}" class="text-center">{{article.Author.UserName}}</a>
         </div>
-        <div class="col-md-8 col-md-offset-1">
+        <div class="col-md-9">
             <div class="row">
                 <h2 class="word-break">{{article.Title}}</h2>
             </div>

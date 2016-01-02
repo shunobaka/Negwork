@@ -29,6 +29,7 @@
 
 .profile-image-container {
     position: relative;
+    margin-top: 20px;
     width:    100%; /* desired width */
 }
 
@@ -39,10 +40,14 @@
 }
 
 .profile-image {
-    padding: 20px;
     position: absolute;
     top:      0;
     left:     0;
     bottom:   0;
     right:    0;
+}
+
+.row {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }
