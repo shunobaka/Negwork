@@ -8,6 +8,7 @@
         users.getUserInfo(username)
             .then(function (response) {
                 vm.user = response;
+                vm.user.AdditionalInfo = vm.user.AdditionalInfo.replace(/\r?\n/g, '<br />');
             }, function () {
                 $location.path('/home');
                 notifier.error('There was a problem retrieving info for the user.');

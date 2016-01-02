@@ -22,7 +22,6 @@
                     notifier.success('Profile was updated successfully!');
                 }, function (err) {
                     var error = err.data;
-                    console.log(error);
                     if (error.ModelState !== undefined) {
                         var modelState = error.ModelState;
                         for (var prop in modelState) {
