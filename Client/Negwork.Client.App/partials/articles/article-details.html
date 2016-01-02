@@ -6,14 +6,10 @@
                 <img class="profile-image" ng-src="{{vm.article.Author.ProfileImage || vm.DefaultProfile}}" width="100%" height="100%" />
             </div>
             <a href="/user/{{vm.article.Author.UserName}}" class="text-center">{{vm.article.Author.UserName}}</a>
-            <div class="row">
-                <br />
-                <a href="/article/{{vm.article.Id}}" class="btn btn-primary">Article details</a>
-            </div>
         </div>
         <div class="col-md-9">
             <div class="row">
-                <h2 class="word-break">{{vm.article.Title}}</h2>
+                <h2 class="word-break jumbotron">{{vm.article.Title}}</h2>
             </div>
             <div class="row text-left">
                 <p class="word-break"><small><span ng-bind-html="vm.article.Description"></span></small></p>
@@ -48,8 +44,32 @@
     </div>
     <div class="row">
         <h4 class="jumbotron text-center">Comments</h4>
-        <div class="col-md-10 col-md-offset-1">
-            Something
+        <div class="row text-left">
+            <div class="col-md-10 col-md-offset-1" ng-if="vm.isAuthenticated">
+                <form name="commentForm">
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" placeholder="Write comment..." ng-model="comment.content" required="required" class="form-control"></textarea>
+                    <br />
+                    <button class="btn btn-success" ng-disabled="commentForm.$invalid" ng-click="vm.postComment(comment)">Post comment</button>
+                </form>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 jumbotron" ng-if="vm.article.Comments.length != 0">
+                <div class="row" ng-repeat="comment in vm.article.Comments">
+                    <div class="col-md-10 col-md-offset-1 text-left">
+                        <div>
+                            <h6>- {{comment.User.UserName}} - {{comment.CreationDate | dateFormat}}</h6>
+                        </div>
+                        <h4>{{comment.Content}}</h4>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="vm.article.Comments.length == 0">
+                <h4>There are no comments.</h4>
+            </div>
         </div>
     </div>
+    <br />
 </div>
