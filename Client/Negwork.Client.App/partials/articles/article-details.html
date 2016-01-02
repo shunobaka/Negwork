@@ -1,0 +1,58 @@
+﻿<div class="col-md-8 col-md-offset-2">
+    <h3 class="jumbotron text-center">Article details</h3>
+    <div class="row">
+        <div class="col-md-3">
+            <br />
+            <br />
+            <br />
+            <div class="profile-image-container">
+                <img class="profile-image" ng-src="{{article.Author.ProfileImage || vm.DefaultProfile}}" width="100%" height="100%" />
+            </div>
+            <a href="/user/{{article.Author.UserName}}" class="text-center">{{article.Author.UserName}}</a>
+            <div class="row">
+                <br />
+                <a href="/article/{{article.Id}}" class="btn btn-primary">Article details</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <h2 class="word-break">{{article.Title}}</h2>
+            </div>
+            <div class="row text-left">
+                <p class="word-break"><small><span ng-bind-html="article.Description"></span></small></p>
+            </div>
+            <div class="row">
+                <div class="text-left pull-left">
+                    <div>Rating: {{article.Rating | roundToDecimal: 2}}</div>
+                    <div>Category: {{article.Category.Name}}</div>
+                    <div>Publish date: {{article.DatePublished | dateFormat}}</div>
+                </div>
+                <div class="pull-right">
+                    <div ng-if="vm.isAuthenticated" class="row">
+                        <div class="row">
+                            <br />
+                            <div class="col-md-4">
+                                <button class="btn btn-md btn-success" ng-click="vm.rateArticle($index, rating)">Rate</button>
+                            </div>
+                            <div class="col-md-8">
+                                <select class="form-control" ng-model="rating">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h4 class="jumbotron text-center">Comments</h4>
+        <div class="col-md-10 col-md-offset-1">
+            Something
+        </div>
+    </div>
+</div>

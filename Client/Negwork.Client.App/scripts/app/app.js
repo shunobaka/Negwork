@@ -83,6 +83,9 @@
                 controller: 'ArticlesController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
+            .when('/article/:id', {
+                templateUrl: 'partials/articles/article-details.html'
+            })
             .when('/categories/create', {
                 templateUrl: 'partials/categories/create-category.html',
                 controller: 'AddCategoryController',
