@@ -13,9 +13,12 @@
                         $location.path('/identity/login');
                         notifier.success('Registration successful!');
                     }, function (err) {
-                        var errors = err.data.ModelState[''] || err.data.ModelState['model.Password'];
-                        for (var errorIndex in errors) {
-                            notifier.error(errors[errorIndex]);
+                        var errorsModelState = err.data.ModelState;
+
+                        for (var modelError in errorsModelState) {
+                            for (var errorIndex in errorsModelState[modelError]) {
+                                notifier.error(errorsModelState[modelError][errorIndex]);
+                            }
                         }
                     });
             } else {
