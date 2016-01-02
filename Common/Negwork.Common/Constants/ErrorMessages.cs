@@ -24,5 +24,8 @@
         public const string USER_ADD_INFO_TOO_LONG = "The additional info must be shorter than 5000 characters!";
 
         public const string USER_IMAGE_URL_INVALID = "The profile image must be a valid url.";
+
+        public const string COMMENT_CONTENT_TOO_SHORT = "The content of the comment must be at least 3 characters long!";
+        public const string COMMENT_CONTENT_TOO_LONG = "The content of the comment must be 500 characters at most!";
     }
 }
