@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    var articleDetailsController = function articleDetailsController($routeParams, $location, auth, notifier, articles, comments) {
+    var articleDetailsController = function articleDetailsController($routeParams, $location, $route, auth, notifier, articles, comments) {
         var vm = this;
         var articleId = $routeParams.id;
         vm.DefaultProfile = 'https://diasp.eu/assets/user/default.png';
@@ -23,8 +23,17 @@
             comments.add(comment)
                 .then(function () {
                     notifier.success('Comment was successfully posted!');
+                    $route.reload();
                 }, function (err) {
-                    notifier.error('smth wrng hppnd lel.');
+                    var error = err.data;
+                    if (error.ModelState !== undefined) {
+                        var modelState = error.ModelState;
+                        for (var prop in modelState) {
+                            for (var errIndex in modelState[prop]) {
+                                notifier.error(modelState[prop][errIndex]);
+                            }
+                        }
+                    }
                 });
         };
 
@@ -48,5 +57,5 @@
 
     angular
         .module('negwork.controllers')
-        .controller('ArticleDetailsController', ['$routeParams', '$location', 'auth', 'notifier', 'articles', 'comments', articleDetailsController])
+        .controller('ArticleDetailsController', ['$routeParams', '$location', '$route', 'auth', 'notifier', 'articles', 'comments', articleDetailsController])
 }());
