@@ -24,12 +24,11 @@
             return this.articles.All();
         }
 
-        public Article GetById(int id)
+        public IQueryable<Article> GetById(int id)
         {
             return this.articles
                 .All()
-                .Where(a => a.Id == id)
-                .FirstOrDefault();
+                .Where(a => a.Id == id);
         }
 
         public Article CreateArticle(string userId, string title, string description, DateTime publishDate, int categoryId)

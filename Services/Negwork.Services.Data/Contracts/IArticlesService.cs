@@ -10,10 +10,10 @@
     {
         IQueryable<Article> GetAll();
 
-        Article GetById(int id);
-
         Article CreateArticle(string userId, string title, string description, DateTime publishDate, int categoryId);
 
         ServiceResponse RateArticle(string userId, int id, int rating);
+
+        IQueryable<Article> GetById(int id);
     }
 }
