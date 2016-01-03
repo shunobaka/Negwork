@@ -70,6 +70,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\Negwork.Common\Negwork.Common.csproj">
+      <Project>{067BD06D-428A-4F87-B9A7-E95E6F431B84}</Project>
+      <Name>Negwork.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Negwork.Data.Models\Negwork.Data.Models.csproj">
       <Project>{b1876b91-2433-4be4-b1c9-70ec3cafbfe8}</Project>
       <Name>Negwork.Data.Models</Name>
