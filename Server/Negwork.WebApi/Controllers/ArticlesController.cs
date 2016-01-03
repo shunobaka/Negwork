@@ -3,7 +3,6 @@
     using System;
     using System.Linq;
     using System.Web.Http;
-    using AutoMapper;
     using AutoMapper.QueryableExtensions;
     using Microsoft.AspNet.Identity;
     using Models.ArticleModels;
