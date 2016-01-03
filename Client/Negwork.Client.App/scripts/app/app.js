@@ -94,6 +94,9 @@
                 controllerAs: CONTROLLER_AS_VIEW_MODEL,
                 resolve: routeResolvers.authenticationRequired
             })
+            .when('/about', {
+                templateUrl: 'partials/home/about.html'
+            })
             .when('/unauthorized', {
                 templateUrl: 'partials/common/unauthorized.html'
             })
