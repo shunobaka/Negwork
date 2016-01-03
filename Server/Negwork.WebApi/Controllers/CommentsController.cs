@@ -1,10 +1,10 @@
 ﻿namespace Negwork.WebApi.Controllers
 {
+    using System;
+    using System.Web.Http;
     using Microsoft.AspNet.Identity;
     using Models.CommentModels;
     using Services.Data.Contracts;
-    using System;
-    using System.Web.Http;
 
     public class CommentsController : ApiController
     {

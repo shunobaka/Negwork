@@ -1,10 +1,10 @@
 ﻿namespace Negwork.Services.Data
 {
     using System.Linq;
+    using Common;
     using Contracts;
     using Negwork.Data.Models;
     using Negwork.Data.Repositories;
-    using Common;
 
     public class UsersService : IUsersService
     {
@@ -43,7 +43,7 @@
             string additionalInfo,
             string profileImage)
         {
-            var user = users
+            var user = this.users
                 .All()
                 .Where(u => u.Id == userId)
                 .FirstOrDefault();
@@ -73,7 +73,7 @@
                 user.ProfileImage = profileImage;
             }
 
-            users.SaveChanges();
+            this.users.SaveChanges();
             return ServiceResponse.Ok;
         }
     }

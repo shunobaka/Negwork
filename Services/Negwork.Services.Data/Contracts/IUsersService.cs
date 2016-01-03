@@ -1,8 +1,8 @@
 ﻿namespace Negwork.Services.Data.Contracts
 {
     using System.Linq;
-    using Negwork.Data.Models;
     using Common;
+    using Negwork.Data.Models;
 
     public interface IUsersService
     {

@@ -18,7 +18,7 @@ namespace Negwork.WebApi
 
             AutoMapperConfig.RegisterMappings(Assemblies.WebApi);
 
-            ConfigureAuth(app);
+            this.ConfigureAuth(app);
 
             var httpConfig = new HttpConfiguration();
 

@@ -1,8 +1,9 @@
 ﻿namespace Negwork.WebApi.Models.CommentModels
 {
+    using System;
     using Data.Models;
     using Negwork.WebApi.Infrastructure.Mappings;
-    using System;
+
     public class CommentResponseModel : IMapFrom<Comment>
     {
         public int Id { get; set; }

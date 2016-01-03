@@ -1,8 +1,8 @@
 ﻿namespace Negwork.Data.Models
 {
-    using Common.Constants;
     using System;
     using System.ComponentModel.DataAnnotations;
+    using Common.Constants;
 
     public class Comment
     {

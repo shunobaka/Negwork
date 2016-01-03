@@ -2,16 +2,13 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Linq;
     using System.Net.Http;
     using System.Security.Claims;
     using System.Security.Cryptography;
     using System.Threading.Tasks;
     using System.Web;
     using System.Web.Http;
-    using AutoMapper.QueryableExtensions;
-    using Data;
+    using AutoMapper;
     using Data.Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
@@ -20,13 +17,12 @@
     using Microsoft.Owin.Security.Cookies;
     using Microsoft.Owin.Security.OAuth;
     using Models;
+    using Models.UserModels;
     using Providers;
     using Results;
-    using Services.Data.Contracts;
-    using AutoMapper;
-    using System.Web.Http.Cors;
-    using Models.UserModels;
     using Services.Common;
+    using Services.Data.Contracts;
+
     [Authorize]
     [RoutePrefix("api/Users")]
     public class AccountController : ApiController
@@ -378,22 +374,8 @@
         public IHttpActionResult Identity()
         {
             var userId = this.User.Identity.GetUserId();
-
-            //var db = new NegworkDbContext();
-
-            //var user = await db.Users
-            //    .Where(u => u.Id == userId)
-            //    .ProjectTo<UserIdentityResponseModel>()
-            //    .FirstOrDefaultAsync();
-
-            //if (user == null)
-            //{
-            //    return this.InternalServerError();
-            //}
-
-            //return this.Json(user);
-            var user = data.GetById(userId);
-
+            var user = this.data.GetById(userId);
+            
             if (user == null)
             {
                 return this.InternalServerError();
@@ -409,7 +391,7 @@
         [Route("Profile/{username}")]
         public IHttpActionResult GetUserProfile(string username)
         {
-            var user = data.GetByName(username);
+            var user = this.data.GetByName(username);
 
             if (user == null)
             {

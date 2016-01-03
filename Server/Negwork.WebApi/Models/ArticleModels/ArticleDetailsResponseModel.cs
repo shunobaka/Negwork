@@ -1,12 +1,12 @@
 ﻿namespace Negwork.WebApi.Models.ArticleModels
 {
+    using System;
+    using System.Collections.Generic;
     using AutoMapper;
     using CategoryModels;
     using CommentModels;
     using Data.Models;
     using Negwork.WebApi.Infrastructure.Mappings;
-    using System;
-    using System.Collections.Generic;
 
     public class ArticleDetailsResponseModel : IMapFrom<Article>, IHaveCustomMappings
     {

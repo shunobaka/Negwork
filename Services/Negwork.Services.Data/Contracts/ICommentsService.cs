@@ -1,7 +1,7 @@
 ﻿namespace Negwork.Services.Data.Contracts
 {
-    using Negwork.Data.Models;
     using System;
+    using Negwork.Data.Models;
 
     public interface ICommentsService
     {

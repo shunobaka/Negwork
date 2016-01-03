@@ -24,8 +24,8 @@
                 CreationDate = creationDate
             };
 
-            comments.Add(comment);
-            comments.SaveChanges();
+            this.comments.Add(comment);
+            this.comments.SaveChanges();
 
             return comment;
         }

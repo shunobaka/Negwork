@@ -1,7 +1,7 @@
 ﻿namespace Negwork.WebApi.Models.UserModels
 {
-    using Common.Constants;
     using System.ComponentModel.DataAnnotations;
+    using Common.Constants;
 
     public class UserUpdateRequestModel
     {
