@@ -11,10 +11,13 @@
         </thead>
         <tbody>
             <tr ng-repeat="article in vm.articles">
-                <td>{{$index}}</td>
-                <td>{{article.Title}}</td>
+                <td>{{$index + 1}}</td>
+                <td>
+                    <a ng-if="vm.isAuthenticated" href="/article/{{article.Id}}">{{article.Title}}</a>
+                    <span ng-if="!vm.isAuthenticated">{{article.Title}}</span>
+                </td>
                 <td>{{article.Author.UserName}}</td>
-                <td>{{article.PublishDate | dateFormat}}</td>
+                <td>{{article.DatePublished | dateFormat}}</td>
                 <td>{{article.Rating | roundToDecimal: 2}}</td>
             </tr>
         </tbody>
