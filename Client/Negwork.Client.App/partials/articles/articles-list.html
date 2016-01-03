@@ -1,0 +1,22 @@
+﻿<div class="col-md-10 col-md-offset-1">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>&#8470;</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Date published</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="article in vm.articles">
+                <td>{{$index}}</td>
+                <td>{{article.Title}}</td>
+                <td>{{article.Author.UserName}}</td>
+                <td>{{article.PublishDate | dateFormat}}</td>
+                <td>{{article.Rating | roundToDecimal: 2}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
