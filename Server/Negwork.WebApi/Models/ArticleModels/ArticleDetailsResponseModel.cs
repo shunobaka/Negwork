@@ -28,7 +28,7 @@
 
         public void CreateMappings(IConfiguration configuration)
         {
-            configuration.CreateMap<Article, ArticleResponseModel>()
+            configuration.CreateMap<Article, ArticleDetailsResponseModel>()
                 .ForMember(a => a.Rating, opts => opts.MapFrom(a => a.NumberOfRatings != 0 ? (double)a.AllRatings / (double)a.NumberOfRatings : 0));
         }
     }
