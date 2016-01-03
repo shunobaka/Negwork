@@ -21,11 +21,16 @@
             return data.get(ARTICLES_API_URL + '/' + id);
         }
 
+        function getByUser(username) {
+            return data.get(ARTICLES_API_URL, { filterBy: 'user', filter: username, orderBy: 'rating', orderType: 'desc' });
+        }
+
         return {
             add: add,
             search: search,
             rate: rate,
-            getById: getById
+            getById: getById,
+            getByUser: getByUser
         };
     };
 
