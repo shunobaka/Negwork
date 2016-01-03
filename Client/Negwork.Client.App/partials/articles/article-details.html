@@ -60,7 +60,7 @@
                 <div class="row" ng-repeat="comment in vm.article.Comments | orderBy: '-CreationDate'">
                     <div class="col-md-10 col-md-offset-1 text-left">
                         <div>
-                            <h6>- {{comment.User.UserName}} - {{comment.CreationDate | dateFormat}}</h6>
+                            <h6>- <a href="/user/{{comment.User.UserName}}">{{comment.User.UserName}}</a> - {{comment.CreationDate | dateFormat}}</h6>
                         </div>
                         <h5 class="word-break">{{comment.Content}}</h5>
                     </div>
