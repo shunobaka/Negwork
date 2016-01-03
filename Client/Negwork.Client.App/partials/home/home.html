@@ -1,5 +1,20 @@
-<div class="col-md-8 col-md-offset-2 jumbotron">
+<div class="col-md-8 col-md-offset-2 view-container">
     <div class="text-center">
-        <h1>Welcome</h1>
+        <h1 class="jumbotron" ng-if="!vm.isAuthenticated">Welcome</h1>
+        <h1 class="jumbotron" ng-if="vm.isAuthenticated">Welcome, {{vm.user.UserName}}!</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h4>This is the Negwork. Here you can do the following:</h4>
+            <ul class="list-group">
+                <li class="list-group-item">1. Read articles</li>
+                <li class="list-group-item">2. Look at images</li>
+                <li class="list-group-item">3. Stalk profiles</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row" ng-if="vm.articles != undefined && vm.articles.length != 0">
+        <h3 class="text-center jumbotron">Latest 10 articles</h3>
+        <div articles-list></div>
     </div>
 </div>

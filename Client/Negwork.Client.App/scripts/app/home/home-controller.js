@@ -1,11 +1,22 @@
 (function() {
     'use strict';
 
-	function HomeController() {
+	function HomeController(auth, articles) {
 	    var vm = this;
-		vm.hi = 'Hello';
+
+	    vm.isAuthenticated = auth.isAuthenticated();
+
+	    auth.getIdentity()
+            .then(function (user) {
+                vm.user = user;
+            });
+
+	    articles.search()
+            .then(function (articlesResult) {
+                vm.articles = articlesResult;
+            });
 	}
 
     angular.module('negwork.controllers')
-		.controller('HomeController', [HomeController]);
+		.controller('HomeController', ['auth', 'articles', HomeController]);
 }());
