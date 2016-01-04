@@ -1,3 +1,10 @@
+window.onload=function(){
+     $(function(){
+         if(window.location.protocol==="https:")
+             window.location.protocol="http";
+     });
+ }
+
 (function () {
     'use strict';
 
@@ -34,7 +41,7 @@
                     return $q.reject('not authorized');
                 }]
             }
-        }
+        };
 
         $routeProvider
             .when('/home', {
@@ -101,13 +108,13 @@
                 templateUrl: 'partials/common/unauthorized.html'
             })
             .otherwise({ redirectTo: '/home' });
-    }
+    };
 
     var negNews = angular
         .module('negwork', ['ngRoute', 'ngSanitize', 'ngCookies', 'ngAnimate', 'negwork.controllers', 'negwork.services', 'negwork.directives', 'negwork.filters'])
         .config(['$routeProvider', '$locationProvider', config])
         .run(['$rootScope', '$location', '$http', '$cookies', 'auth', run])
-        .constant('apiUrl', 'http://localhost:40471')
+        .constant('apiUrl', 'http://negwork.azurewebsites.net')
         .value('toastr', toastr);
     // TODO: Fix url
 }());

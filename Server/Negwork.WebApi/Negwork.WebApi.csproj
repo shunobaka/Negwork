@@ -257,9 +257,7 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <None Include="Properties\PublishProfiles\Negwork - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\Negwork - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\Negwork - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\Negwork - Web Deploy.pubxml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

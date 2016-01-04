@@ -1,0 +1,29 @@
+{
+  "name": "negwork",
+  "version": "1.0.0",
+  "description": "",
+  "main": "web.js",
+  "engines": {
+    "node": "0.12.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node web.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shunobaka/Negwork.git"
+  },
+  "keywords": [
+    "negwork"
+  ],
+  "author": "Veselin Minev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shunobaka/Negwork/issues"
+  },
+  "homepage": "https://github.com/shunobaka/Negwork#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
